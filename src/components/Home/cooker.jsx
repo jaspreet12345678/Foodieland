@@ -1,7 +1,7 @@
 import { Flex, Image, Box, Text, Heading, Button } from "@chakra-ui/react";
 import React from "react";
 
-const Curosel = () => {
+const Cooker = () => {
   return (
     <Flex marginTop="60px">
       <Flex max>
@@ -23,4 +23,4 @@ const Curosel = () => {
   );
 };
 
-export default Curosel;
+export default Cooker;

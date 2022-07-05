@@ -1,8 +1,8 @@
 import React, { useState, useEffect,Button } from "react";
 import axios from "axios";
-import { Heading, GridItem, Grid, Flex } from "@chakra-ui/react";
+import { Heading, GridItem, Grid, Flex, HStack } from "@chakra-ui/react";
 function Category() {
-  const [posts, setPosts] = useState([]);
+  const [category, setCategory] = useState([]);
 
   useEffect(() => {
     const loadPost = async () => {
@@ -11,7 +11,7 @@ function Category() {
       );
       console.log(response);
 
-      setPosts(response.data);
+      setCategory(response.data);
     };
 
     loadPost();
@@ -20,9 +20,12 @@ function Category() {
   return (
     <>
       <div>
-        <Heading m={10}>Category</Heading>
+        <HStack>
+          <Heading m={10}>Category</Heading>
+          <Button>View all Categies</Button>
+        </HStack>
         <Grid ml={8} templateColumns="repeat(6, 1fr)" gap={6}>
-        {posts.slice(2,8).map((item) => (
+        {category.slice(2,8).map((item) => (
         <GridItem  >
         <img  width= "100px" height="25px" src={"http://95.111.202.157:8001/" + item.image}/>
         <Flex ml={10} mt={10}>{item.categoryName}</Flex>
