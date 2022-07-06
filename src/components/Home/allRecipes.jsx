@@ -1,42 +1,33 @@
-import {
-  Heading,
-  Box,
-  Text,
-  Stack,
-  Image,
-  SimpleGrid,
-  HStack,
-  Button,
-} from "@chakra-ui/react";
+import React, { Component } from "react";
 import axios from "axios";
-import React from "react";
-import { Component } from "react";
+import { Box, Heading, Flex, SimpleGrid, Text, Button, Image, HStack } from "@chakra-ui/react";
 import { BsFillAlarmFill } from "react-icons/bs";
 import { ImSpoonKnife } from "react-icons/im";
-class Recipe extends Component {
+
+class AllReceipes extends Component {
   state = {
-    popularRecipe: [],
+    popularReceipes: [],
   };
 
   async componentDidMount() {
-    const url = "http://95.111.202.157:8001/api/v1/getAllRecipes";
-    const recipe = await axios.get(url);
-    const popularRecipe = recipe.data;
-    console.log(popularRecipe);
-    this.setState({ popularRecipe: popularRecipe });
+    const URL = "http://95.111.202.157:8001/api/v1/getAllRecipes";
+    const res = await axios.get(URL);
+    const popularReceipes = res.data;
+    console.log(popularReceipes);
+    this.setState({ popularReceipes });
   }
   render() {
     return (
-      <Box mt={20} maxW={1024} mx={"auto"}>
-        <Stack textAlign={"center"}>
-          <Heading>Simple and tasty recipes</Heading>
-          <Text>
-            Lorem ipsum dolor sit amet consectetur ipsum dolor sit amet
-            consectetur <br /> Lorem ipsum dolor sit amet consectetur{" "}
+      <Box mt={20} maxW={1080} mx={"auto"} >
+        <Flex mt={30}>
+          <Heading w={540}>Try this delicious receipe<br/> to make your day</Heading>
+          <Text w={540} mt={5}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Text>
-        </Stack>
+        </Flex>
         <SimpleGrid columns={3} spacing={6}>
-          {this.state.popularRecipe.slice(0, 6).map((item) => {
+          {this.state.popularReceipes.slice(0,6).map((item) => {
             return (
               <Box p={3} bg="#EBF8FF" borderRadius={20} as="article" mt={15}>
                 <Image
@@ -67,4 +58,4 @@ class Recipe extends Component {
   }
 }
 
-export default Recipe;
+export default AllReceipes;

@@ -22,7 +22,7 @@ const Static = () => {
         color={"#000"}
       >
         <Flex>
-          <Box>
+          <Box mt={8}>
             <Image src="/1.png" />
           </Box>
         </Flex>

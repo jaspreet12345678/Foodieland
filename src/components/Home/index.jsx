@@ -9,6 +9,7 @@ import ImageSlider from "./ImageSlider";
 import { SlideData } from "./SlideData";
 import Instagram from "./instagram";
 import Recipe from "./recipe";
+import AllReceipes from "./allRecipes";
 const Index = () => {
   return (
     <>
@@ -17,11 +18,12 @@ const Index = () => {
       <Box w="100%" p={4} color="white">
         <ImageSlider slides={SlideData} />
       </Box>
-      <Cooker />
-      <Recipe />
       <Category />
+      <Recipe />
+      <Cooker />
+      <Instagram />
+      <AllReceipes />
       <Static />
-      {/* <Instagram /> */}
       <Footer />
     </>
   );

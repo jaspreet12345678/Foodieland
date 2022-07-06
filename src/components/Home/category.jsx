@@ -30,39 +30,30 @@ function Category() {
   }, []);
 
   return (
-    <>
-      <Box>
-        <Flex marginTop="60px" maxW={1024} mx={"auto"}>
-          <VStack>
-            <Flex>
-              <Box >
-                <HStack justifyContent={"space-between"}>
-                  <Heading>Category</Heading>
-                  <Spacer />
-                  <Button>View all Categories</Button>
-                </HStack>
-              </Box>
-            </Flex>
-            <Flex>
-              <Grid ml={8} templateColumns="repeat(6, 1fr)" gap={6}>
-                {category.slice(2, 8).map((item) => (
-                  <GridItem>
-                    <Image
-                      w={250}
-                      h={150}
-                      src={"http://95.111.202.157:8001/" + item.image}
-                    />
-                    <Flex ml={10} mt={10}>
-                      {item.categoryName}
-                    </Flex>
-                  </GridItem>
-                ))}
-              </Grid>
-            </Flex>
-          </VStack>
-        </Flex>
+    <Box marginTop="60px" maxW={1024} mx={"auto"}>
+      <HStack justifyContent={"space-between"}>
+        <Heading>Category</Heading>
+        <Button bgColor="#EBF8FF" borderRadius="10px">
+          View all Categories
+        </Button>
+      </HStack>
+      <Box h={"100%"} w={"100%"} mt={10}>
+        <Grid templateColumns="repeat(6, 1fr)" gap={6}>
+          {category.slice(2, 8).map((item) => (
+            <GridItem>
+              <Image
+                w={250}
+                h={150}
+                src={"http://95.111.202.157:8001/" + item.image}
+              />
+              <Text fontSize={"md"} fontWeight={400} textAlign={"center"}>
+                {item.categoryName}
+              </Text>
+            </GridItem>
+          ))}
+        </Grid>
       </Box>
-    </>
+    </Box>
   );
 }
 

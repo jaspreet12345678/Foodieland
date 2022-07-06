@@ -12,7 +12,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <Box>
+      <Box mt={20}>
         <Flex maxW={1024} mx={"auto"} marginLeft="20px" marginRight="20px">
           <Flex>
             <VStack>
