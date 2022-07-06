@@ -4,7 +4,7 @@ import Index from "./components/Home";
 function App() {
   return (
     <>
-      <Index/>
+      <Index />
     </>
   );
 }
