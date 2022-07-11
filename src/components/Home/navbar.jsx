@@ -1,9 +1,10 @@
-import { Text, Box, Stack, Flex } from "@chakra-ui/react";
+import { Text, Stack, Flex, Box, Divider} from "@chakra-ui/react";
 import React from "react";
 import { Avatar } from "@chakra-ui/react";
-const Navbar = () => {
+const Navbar =() => {
   return (
-    <Flex
+    <>
+    <Box maxW={1024} mx={"auto"}
     >
       <Stack direction={["column", "row"]} spacing="24px">
         <Flex w="300px" h="50px">
@@ -24,14 +25,14 @@ const Navbar = () => {
           <Text marginTop="10px">Contact us</Text>
           <Text marginTop="10px">About us</Text>
         </Flex>
-        <Flex>
-          <Stack direction="row" justify="flex-end">
+        <Flex >
             <Avatar src="https://bit.ly/broken-link" />
-          </Stack>
         </Flex>
       </Stack>
-    </Flex>
-    
+      <Divider border="2px" />
+    </Box>
+   
+    </>
   );
 };
 

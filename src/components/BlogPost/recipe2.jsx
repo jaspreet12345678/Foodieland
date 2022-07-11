@@ -1,40 +1,45 @@
-import React, { Component } from "react";
+import {
+  Heading,
+  Box,
+  Stack,
+  Image,
+  SimpleGrid,
+  HStack,
+  Button,
+} from "@chakra-ui/react";
 import axios from "axios";
-import { Box, Heading, Flex, SimpleGrid, Text, Button, Image, HStack } from "@chakra-ui/react";
+import React from "react";
+import { Component } from "react";
 import { BsFillAlarmFill } from "react-icons/bs";
 import { ImSpoonKnife } from "react-icons/im";
-
-class AllReceipes extends Component {
+class Recipe extends Component {
   state = {
-    popularReceipes: [],
+    popularRecipe: [],
   };
 
   async componentDidMount() {
-    const URL = "https://foodielandnod.herokuapp.com/api/v1/getAllRecipes";
-    const res = await axios.get(URL);
-    const popularReceipes = res.data;
-    console.log(popularReceipes);
-    this.setState({ popularReceipes });
+    const url = "https://foodielandnod.herokuapp.com/api/v1/getAllRecipes";
+    const recipe = await axios.get(url);
+    const popularRecipe = recipe.data;
+    console.log(popularRecipe);
+    this.setState({ popularRecipe: popularRecipe });
   }
   render() {
     return (
-      <Box mt={20} maxW={1024} mx={"auto"} >
-        <Flex mt={30}>
-          <Heading w={540}>Try this delicious receipe<br/> to make your day</Heading>
-          <Text w={540} mt={5}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Text>
-        </Flex>
+      <Box mt={20} maxW={1024} mx={"auto"}>
+        <Stack textAlign={"center"}>
+          <Heading>Check out the Delicious recipes</Heading>
+          
+        </Stack>
         <SimpleGrid columns={3} spacing={6}>
-          {this.state.popularReceipes.slice(0,6).map((item) => {
+          {this.state.popularRecipe.slice(0,3).map((item) => {
             return (
               <Box p={3} bg="#EBF8FF" borderRadius={20} as="article" mt={15}>
                 <Image
                   ImageobjectFit="fill"
                   h={200}
                   w="100%"
-                  src={"https://foodielandnod.herokuapp.com/" + item.recipeId.image ? "download.jpeg" : "https://foodielandnod.herokuapp.com/" + item.recipeId.image}
+                  src={"https://foodielandnod.herokuapp.com/" + item.recipeId.image ? "banana.png" : "https://foodielandnod.herokuapp.com/" + item.recipeId.image }
                 />
                 <Heading size="md" fontWeight="bold">
                   {item.recipeId.title}
@@ -58,4 +63,4 @@ class AllReceipes extends Component {
   }
 }
 
-export default AllReceipes;
+export default Recipe;

@@ -1,41 +1,4 @@
-// import {
-//   Box,
-//   Flex,
-//   Image,
-//   Heading,
-//   Text,
-//   HStack,
-// } from "@chakra-ui/react";
-// import { Carousel } from "react-responsive-carousel";
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
-
-// const api = "http://95.111.202.157:8001/api/getAllCategory";
-// // If you want to use your own Selectors look up the Advancaed Story book examples
-// const ImageSlider = ({ slides }) => {
-//   return (
-//     <Carousel infiniteLoop>
-//       {slides.map((slide) => {
-//         return (
-//           <>
-//             <Box >
-//               <HStack>
-//                 <Flex bg="#e6faff"  w={750} h={450}>
-//                       <Text color={"black"}>Jaspreet</Text>
-//                 </Flex>
-//                 <Flex w={500}>
-//                   <Image src={slide.image} />
-//                 </Flex>
-//               </HStack>
-//             </Box>
-//           </>
-//         );
-//       })}
-//     </Carousel>
-//   );
-// };
-// export default ImageSlider;
 import {
-  Image,
   Box,
   Heading,
   Flex,
@@ -45,17 +8,34 @@ import {
   Wrap,
   WrapItem,
   Avatar,
+  Image,
 } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { BsFillAlarmFill } from "react-icons/bs";
 import { ImSpoonKnife } from "react-icons/im";
 import { MdOutlineSlowMotionVideo, MdKitchen } from "react-icons/md";
-// If you want to use your own Selectors look up the Advancaed Story book examples
+import axios from "axios";
+import { useEffect, useState } from "react";
+import moment from "moment";
+
 const ImageSlider = ({ slides }) => {
+  const [data, setData] = useState([]);
+
+  const getPopularReceipeData = async () => {
+    const URL = "https://foodielandnod.herokuapp.com/api/popularRecipes";
+    const res = await axios.get(URL);
+    const receipeData = res.data;
+    setData(receipeData);
+  };
+
+  useEffect(() => {
+    getPopularReceipeData();
+  }, []);
+
   return (
     <Carousel infiniteLoop>
-      {slides.map((slide) => {
+      {data.map((item) => {
         return (
           <Box>
             <Flex
@@ -72,7 +52,7 @@ const ImageSlider = ({ slides }) => {
                   <MdKitchen /> Hot Receipe
                 </Button>
                 <Heading fontSize="4xl" mt={25} ml={5} mr={20}>
-                  Spicy Delicious Chicken Wings
+                  {item.recipeId.title}
                 </Heading>
                 <Text
                   fontSize={"sm"}
@@ -82,17 +62,16 @@ const ImageSlider = ({ slides }) => {
                   textAlign="justify"
                   mr={20}
                 >
-                  Lorem ipsum dolor sit amet, Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s
+                  {item.recipeId.description}
                 </Text>
                 <HStack ml={10} justifyItems={"space-between"}>
                   <Button borderRadius="10px" bgColor="#EDFDFD">
                     <BsFillAlarmFill />
-                    30 Minutes
+                    {item.recipeId.prepTime}
                   </Button>
                   <Button borderRadius="10px" bgColor="#EDFDFD">
                     <ImSpoonKnife />
-                    Chicken
+                    {item.recipeId.categoryId.categoryName}
                   </Button>
                 </HStack>
                 <Wrap
@@ -106,11 +85,20 @@ const ImageSlider = ({ slides }) => {
                     <Avatar
                       size="sm"
                       name="Kent Dodds"
-                      src="https://bit.ly/kent-c-dodds"
-                    />
+                      src={
+                        "https://foodielandnod.herokuapp.com/" +
+                        item.recipeId.categoryId.image
+                      }
+                    />{' '}
                     <Box pl={3}>
-                      <Heading fontSize={"sm"}>John Smith</Heading>
-                      <Text fontSize={"sm"}>20 March 2022</Text>
+                      <Heading fontSize={"sm"}>
+                        {item.recipeId.categoryId.firstName}
+                      </Heading>
+                      <Text fontSize={"sm"}>
+                        {moment(item.recipeId.categoryId.createdAt).format(
+                          "MMM Do YY"
+                        )}
+                      </Text>
                     </Box>
                   </WrapItem>
                   <Button borderRadius="10px" bgColor="#000" colorScheme="#fff">
@@ -120,7 +108,7 @@ const ImageSlider = ({ slides }) => {
                 </Wrap>
               </Box>
               <Box w={512}>
-                <Image src={slide.image} height={460} w={"100%"} />
+                    <Image src={"https://foodielandnod.herokuapp.com/" + item.image ? "food.jpg" : "https://foodielandnod.herokuapp.com/" + item.image} height="500px" />
               </Box>
             </Flex>
           </Box>

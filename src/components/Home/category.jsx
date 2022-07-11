@@ -4,14 +4,11 @@ import {
   Heading,
   GridItem,
   Grid,
-  Flex,
   HStack,
   Box,
   Button,
-  VStack,
   Image,
   Text,
-  Spacer,
 } from "@chakra-ui/react";
 function Category() {
   const [category, setCategory] = useState([]);
@@ -19,10 +16,8 @@ function Category() {
   useEffect(() => {
     const loadPost = async () => {
       const response = await axios.get(
-        "http://95.111.202.157:8001/api/getAllCategory"
+        "https://foodielandnod.herokuapp.com/api/getAllCategory"
       );
-      console.log(response);
-
       setCategory(response.data);
     };
 
@@ -44,7 +39,7 @@ function Category() {
               <Image
                 w={250}
                 h={150}
-                src={"http://95.111.202.157:8001/" + item.image}
+                src={"https://foodielandnod.herokuapp.com/" + item.image ? "food.jpg" : "https://foodielandnod.herokuapp.com/" + item.image}
               />
               <Text fontSize={"md"} fontWeight={400} textAlign={"center"}>
                 {item.categoryName}
@@ -56,3 +51,5 @@ function Category() {
     </Box>
   );
 }
+
+export default Category;

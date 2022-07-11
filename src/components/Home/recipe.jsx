@@ -19,7 +19,7 @@ class Recipe extends Component {
   };
 
   async componentDidMount() {
-    const url = "http://95.111.202.157:8001/api/v1/getAllRecipes";
+    const url = "https://foodielandnod.herokuapp.com/api/v1/getAllRecipes";
     const recipe = await axios.get(url);
     const popularRecipe = recipe.data;
     console.log(popularRecipe);
@@ -43,7 +43,7 @@ class Recipe extends Component {
                   ImageobjectFit="fill"
                   h={200}
                   w="100%"
-                  src={"http://95.111.202.157:8001/" + item.recipeId.image}
+                  src={"https://foodielandnod.herokuapp.com/" + item.recipeId.image ? "food.jpg" : "https://foodielandnod.herokuapp.com/" + item.recipeId.image }
                 />
                 <Heading size="md" fontWeight="bold">
                   {item.recipeId.title}

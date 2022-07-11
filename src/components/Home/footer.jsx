@@ -1,55 +1,53 @@
-import {
-  Flex,
-  Heading,
-  VStack,
-  Text,
-  Divider,
-  Box,
-  Spacer,
-} from "@chakra-ui/react";
 import React from "react";
+import {
+  Box,
+  Flex,
+  Spacer,
+  Text,
+  Stack,
+  Divider,
+  Button,
+} from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-const Footer = () => {
+
+function Footer(props) {
   return (
-    <>
-      <Box mt={20}>
-        <Flex maxW={1024} mx={"auto"} marginLeft="20px" marginRight="20px">
+    <Box maxW={1024} mx={"auto"}>
+      <Box mt={10}>
+        <Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
+          <Box>
+            <Text fontSize='2xl' as='i' color='#001219' fontWeight="800">Foodieland</Text>
+            <Text>Lorem ipsum dolor sit amet</Text>
+          </Box>
+          <Spacer />
+          <Flex alignItems={"center"}>
+            <Stack direction={"row"} spacing={7}>
+              <Text>Receipe</Text>
+              <Text>Blog</Text>
+              <Text>Contact</Text>
+              <Text>About Us</Text>
+            </Stack>
+          </Flex>
+        </Flex>
+        <Divider />
+        <Box mt={5} mb={10}>
           <Flex>
-            <VStack>
-              <Heading marginRight="100px">Foodieland</Heading>
-              <Text>Lorem lpsum dolor sit amit,conseptucuting pit.</Text>
-            </VStack>
-            <Flex
-              marginTop="20px"
-              marginLeft="400px"
-              display="flex"
-              justifyItems="center"
-              justifyContent="space-between"
-            >
-              <Text>Recipes</Text>
-              <Text marginLeft="30px">Blog</Text>
-              <Text marginLeft="30px">Contact us</Text>
-              <Text marginLeft="30px">About us</Text>
+            <Flex>
+              <Text fontWeight="600" justifyContent="center">2020 FlowBase Powered by WebFlow</Text>
+            </Flex>
+            <Spacer />
+            <Flex alignItems={"end"}>
+              <Stack direction={"row"} spacing={7}>
+                <Button>{<FaFacebook />}</Button>
+                <Button>{<FaTwitter />}</Button>
+                <Button>{<FaInstagram />}</Button>
+              </Stack>
             </Flex>
           </Flex>
-        </Flex>
-        <Divider border="3px" color="black" />
-        <Flex>
-          <Flex marginLeft="400px">
-            <Box marginTop="20px">
-              <Text>2020 FLowbase. Powered by webflow</Text>
-            </Box>
-          </Flex>
-          <Spacer />
-          <Flex float="right" w="150px" display="flex" justify="space-between">
-            <FaFacebook />
-            <FaInstagram />
-            <FaTwitter />
-          </Flex>
-        </Flex>
+        </Box>
       </Box>
-    </>
+    </Box>
   );
-};
+}
 
 export default Footer;
