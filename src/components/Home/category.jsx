@@ -56,5 +56,3 @@ function Category() {
     </Box>
   );
 }
-
-export default Category;
