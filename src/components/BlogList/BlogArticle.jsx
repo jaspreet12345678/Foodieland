@@ -1,6 +1,10 @@
 import React from "react";
 import { Heading, Box, Text, Input, Button, Center } from "@chakra-ui/react";
+import axios from "axios";
+import { useState } from "react";
+
 const BlogArticle = () => {
+  
   return (
     <Box maxW={1024} mx={"auto"} mt={10}>
       <Heading size={"3xl"} textAlign={"center"}>
@@ -12,8 +16,14 @@ const BlogArticle = () => {
       </Text>
       <Center mt={20}>
         <Box display={"flex"} alignContent={"center"} w={600}>
-          <Input variant='flushed' placeholder="Search articles, recipes and news" />
-          <Button bg={"black"} color={"white"}>Search</Button>
+          <Input
+            onChange={searchHandle}
+            variant="flushed"
+            placeholder="Search articles, recipes and news"
+          />
+          <Button bg={"black"} color={"white"}>
+            Search
+          </Button>
         </Box>
       </Center>
     </Box>
