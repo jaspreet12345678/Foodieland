@@ -11,7 +11,7 @@ import React from "react";
 import { Avatar } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const Header = () => {
   return (
     <>
       <Box maxW={1024} mx={"auto"}>
@@ -42,4 +42,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;

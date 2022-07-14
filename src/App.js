@@ -1,15 +1,15 @@
 import "./App.css";
-import Index from "./components/Home/index";
-import AboutUs from "./components/About/index";
-import ReceipeMain from "./components/Recipes/index";
-import BlogMain from "./components/BlogList/index";
-import ContactMain from "./components/Contact/index";
-import BlogPostMain from "./components/BlogPost/index";
+import Index from "./components/Home/Index";
+import AboutUs from "./components/About/Index";
+import ReceipeMain from "./components/Recipes/Index";
+import BlogMain from "./components/BlogList/Index";
+import ContactMain from "./components/Contact/Index";
+import BlogPostMain from "./components/BlogPost/Index";
+// import Index from "./components/Form/index";
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    // <Video />
     <>
     <Switch>
       <Route path="/Home" component={Index}/>

@@ -1,21 +1,20 @@
 import React from "react";
-import Cooker from "./cooker";
-import Footer from "./footer";
-import Navbar from "./navbar";
-import Static from "./static";
+import Cooker from "./Cooker";
+import Footer from "../usable/Footer";
+import Header from "../usable/Header";
+import Static from "../usable/Static";
 import { Box } from "@chakra-ui/react";
-import Categories from "./category";
+import Categories from "./Category";
 import ImageSlider from "./ImageSlider";
-import { SlideData } from "./SlideData";
-import Instagram from "./instagram";
-import Recipe from "./recipe";
-import AllReceipes from "./allRecipes";
+import Instagram from "./Instagram";
+import Recipe from "./Recipe";
+import AllReceipes from "./AllRecipes";
 const Index = () => {
   return (
     <>
-      <Navbar />
+      <Header />
       <Box w="100%" p={4} color="white">
-        <ImageSlider slides={SlideData} />
+        <ImageSlider />
       </Box>
       <Categories />
       <Recipe />
