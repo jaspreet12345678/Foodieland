@@ -6,7 +6,7 @@ import Navbar from "../Home/navbar";
 import Static from "../Home/static";
 import Recipe from "./recipe2";
 import Footer from "../Home/footer"
-const Index = () => {
+const ReceipeMain = () => {
   return (
     <>
       <Navbar />
@@ -20,4 +20,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default ReceipeMain;

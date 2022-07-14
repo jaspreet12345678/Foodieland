@@ -6,7 +6,7 @@ import Recipe from "./recipe2";
 import Footer from "../Home/footer"
 import Content from './content';
 
-const Index = () => {
+const BlogPostMain = () => {
     return ( 
         <>
         <Navbar />
@@ -19,4 +19,4 @@ const Index = () => {
      );
 }
  
-export default Index;
+export default BlogPostMain;

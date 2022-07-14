@@ -17,7 +17,6 @@ const BlogArticle = () => {
       <Center mt={20}>
         <Box display={"flex"} alignContent={"center"} w={600}>
           <Input
-            onChange={searchHandle}
             variant="flushed"
             placeholder="Search articles, recipes and news"
           />

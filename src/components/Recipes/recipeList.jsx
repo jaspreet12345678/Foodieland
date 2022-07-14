@@ -11,8 +11,6 @@ import {
   Icon,
   VStack,
   Button,
-  SimpleGrid,
-  Spacer,
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -85,7 +83,7 @@ function RecipeS() {
             </GridItem>
           </Grid>
           <Box mt={5}>
-            <Image w={650} h={460} src={"food-3.png"} />
+            <Image borderRadius={"3xl"} w={650} h={470} src={"food-3.png"} />
           </Box>
         </Box>
         <Box>

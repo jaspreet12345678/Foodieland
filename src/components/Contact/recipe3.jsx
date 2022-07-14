@@ -1,7 +1,6 @@
 import {
   Heading,
   Box,
-  Text,
   Stack,
   Image,
   SimpleGrid,
@@ -29,21 +28,22 @@ class Recipe extends Component {
     return (
       <Box mt={20} maxW={1024} mx={"auto"}>
         <Stack textAlign={"center"}>
-          <Heading>Simple and tasty recipes</Heading>
-          <Text>
-            Lorem ipsum dolor sit amet consectetur ipsum dolor sit amet
-            consectetur <br /> Lorem ipsum dolor sit amet consectetur{" "}
-          </Text>
+          <Heading>You may like these recipes too</Heading>
         </Stack>
         <SimpleGrid columns={3} spacing={6}>
-          {this.state.popularRecipe.slice(0, 6).map((item) => {
+          {this.state.popularRecipe.slice(0, 3).map((item) => {
             return (
               <Box p={3} bg="#EBF8FF" borderRadius={20} as="article" mt={15}>
                 <Image
                   ImageobjectFit="fill"
                   h={200}
                   w="100%"
-                  src={"https://foodielandnod.herokuapp.com/" + item.recipeId.image ? "food-9.png" : "https://foodielandnod.herokuapp.com/" + item.recipeId.image }
+                  src={
+                    "https://foodielandnod.herokuapp.com/" + item.recipeId.image
+                      ? "banana.png"
+                      : "https://foodielandnod.herokuapp.com/" +
+                        item.recipeId.image
+                  }
                 />
                 <Heading size="md" fontWeight="bold">
                   {item.recipeId.title}

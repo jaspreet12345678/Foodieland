@@ -6,7 +6,7 @@ import {
   VStack,
   Heading,
   Input,
-
+  Button,
 } from "@chakra-ui/react";
 import React from "react";
 const Static = () => {
@@ -27,7 +27,7 @@ const Static = () => {
           </Box>
         </Flex>
 
-        <VStack mt={30}>
+        <VStack mt={35}>
           <Flex>
             <Heading>Deliciousness to your inbox</Heading>
           </Flex>
@@ -37,17 +37,13 @@ const Static = () => {
               Doloremque eligendi, unde, sit vero mollitia esse aperiam
             </Text>
           </Flex>
-          <Input size="lg" placeholder="Your Email" />
-
-          <Flex
-            justifyContent={"center"}
+          <Box
+           display={"flex"}
             borderRadius="3xl"
-            bg="black"
-            w="90px"
-            h="25px"
           >
-            <Text color="white">Subscribe</Text>
-          </Flex>
+            <Input placeholder="Your Email" />
+            <Button  bg={"black"} color="white">Subscribe</Button>
+          </Box>
         </VStack>
         <Flex>
           <Box marginLeft="5px" marginTop="127px">

@@ -8,7 +8,8 @@ import {
   Button,
   Image,
   Spacer,
-  ButtonGroup
+  ButtonGroup,
+  Center
 } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
@@ -44,7 +45,7 @@ function Content() {
           <Heading mt={10} fontSize={"1xl"}>
             Do you cook at home on your days off
           </Heading>
-          <Image mt={3} src={"Cooking.jpg"} />
+          <Image borderLeftRadius={"3xl"} borderRightRadius={"3xl"} mt={3} src={"Cooking.jpg"} />
         </Box>
         <Box>
           <Text mt={10} fontSize={"3xl"} bg={"lightgray"}>
@@ -68,15 +69,17 @@ function Content() {
       </Box>
       <Box w={200} mt={10}>
           <Heading>Share on</Heading>
+          <Center>
           <ButtonGroup >
             <VStack>
-            <Button mt="10">{<FaFacebook />}</Button>
+            <Button bg={"white"} mt="10">{<FaFacebook />}</Button>
             <Spacer/>
-            <Button mt="10">{<FaTwitter />}</Button>
+            <Button bg={"white"} mt="10">{<FaTwitter />}</Button>
             <Spacer />
-            <Button my="10">{<FaInstagram />}</Button>
+            <Button bg={"white"} my="10">{<FaInstagram />}</Button>
             </VStack>
           </ButtonGroup>
+          </Center>
       </Box>
     </Flex>
   );

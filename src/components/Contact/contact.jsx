@@ -14,13 +14,6 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 const Contact = () => {
-  const breakpoints = {
-    sm: "30em",
-    md: "48em",
-    lg: "62em",
-    xl: "80em",
-    "2xl": "96em",
-  };
   return (
       <Box mt={10} maxW={1024} mx={"auto"}>
         <VStack>
@@ -35,7 +28,7 @@ const Contact = () => {
               <SimpleGrid columns={2} spacing={10}>
                 <Box>
                   <Text>Name</Text>
-                  <Input placeholder="Enter your name" />
+                  <Input  placeholder="Enter your name" />
                 </Box>
                 <Box>
                   <Text>Email</Text>
@@ -57,7 +50,6 @@ const Contact = () => {
                   <Text>Message</Text>
                   <Textarea
                     w={600}
-                    value={"Message"}
                     placeholder="Enter your message"
                   />
                 </Box>

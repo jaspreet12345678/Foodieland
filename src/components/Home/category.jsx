@@ -39,7 +39,7 @@ function Category() {
               <Image
                 w={250}
                 h={150}
-                src={"https://foodielandnod.herokuapp.com/" + item.image ? "food.jpg" : "https://foodielandnod.herokuapp.com/" + item.image}
+                src={"https://foodielandnod.herokuapp.com/" + item.image }
               />
               <Text fontSize={"md"} fontWeight={400} textAlign={"center"}>
                 {item.categoryName}

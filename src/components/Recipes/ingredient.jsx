@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Stack, List, ListItem, ListIcon, VStack, Divider, HStack, Img, Text, Spacer } from "@chakra-ui/react";
+import { Box, Flex, Heading, Stack, List, ListItem, ListIcon, VStack, Divider, HStack, Img, Spacer } from "@chakra-ui/react";
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { FiCircle } from "react-icons/fi";

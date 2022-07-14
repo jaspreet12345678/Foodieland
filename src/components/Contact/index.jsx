@@ -1,10 +1,10 @@
 import Footer from "../Home/footer";
 import Navbar from "../Home/navbar";
-import Recipe from "../Home/recipe";
+import Recipe from "./recipe3";
 import Static from "../Home/static";
 import Contact from "./contact";
 
-const Index = () => {
+const ContactMain = () => {
     return (
       <>
       <Navbar />
@@ -16,5 +16,5 @@ const Index = () => {
     );
   };
   
-  export default Index;
+  export default ContactMain;
   

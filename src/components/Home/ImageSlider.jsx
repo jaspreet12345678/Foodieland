@@ -108,7 +108,7 @@ const ImageSlider = ({ slides }) => {
                 </Wrap>
               </Box>
               <Box w={512}>
-                    <Image src={"https://foodielandnod.herokuapp.com/" + item.image ? "food.jpg" : "https://foodielandnod.herokuapp.com/" + item.image} height="500px" />
+                    <Image src={"food-1.png"} height="500px" />
               </Box>
             </Flex>
           </Box>

@@ -3,17 +3,17 @@ import Footer from "../Home/footer";
 import Navbar from "../Home/navbar";
 import Static from "../Home/static";
 import BlogArticle from "./BlogArticle";
-import Nakli from "./nakli";
-function Index() {
+import Blog from "./Blog";
+function BlogMain() {
   return (
     <>
       <Navbar />
       <BlogArticle />
-      <Nakli />
+      <Blog />
       <Static />
       <Footer />
     </>
   );
 }
 
-export default Index;
+export default BlogMain;
