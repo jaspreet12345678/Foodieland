@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Pagination from "./pagination";
+import Pagination from "./Pagination";
 import axios from "axios";
 import { Box, Center} from "@chakra-ui/react";
 import BlogList from "./BlogList";
@@ -22,7 +22,6 @@ const Blog = () => {
   //     }
   //   }
   
-
   const blogsDetails = async () => {
     const { data } = await axios.get(
       "https://foodielandnod.herokuapp.com/api/getAllBlog"
