@@ -10,19 +10,21 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
+import {getAllCategory} from "../../utils/services"
+
 function Category() {
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
     const loadPost = async () => {
-      const response = await axios.get(
-        "https://foodielandnod.herokuapp.com/api/getAllCategory"
-      );
+      const response = await getAllCategory();
       setCategory(response.data);
     };
 
     loadPost();
   }, []);
+
+ const imagePath = "https://foodielandnod.herokuapp.com/";
 
   return (
     <Box marginTop="60px" maxW={1024} mx={"auto"}>
@@ -39,7 +41,7 @@ function Category() {
               <Image
                 w={250}
                 h={150}
-                src={"https://foodielandnod.herokuapp.com/" + item.image }
+                src={imagePath + item.image }
               />
               <Text fontSize={"md"} fontWeight={400} textAlign={"center"}>
                 {item.categoryName}

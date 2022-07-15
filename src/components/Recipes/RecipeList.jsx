@@ -18,14 +18,13 @@ import React from "react";
 import { FiPrinter, FiShare2 } from "react-icons/fi";
 import { RiTimerFill } from "react-icons/ri";
 import { TbToolsKitchen2 } from "react-icons/tb";
+import { getAllReceipe } from "../../utils/services";
 function RecipeS() {
   const [recipes, setRecipes] = useState([]);
-
+  const imagePath = "https://foodielandnod.herokuapp.com/";
   useEffect(() => {
     const loadPost = async () => {
-      const response = await axios.get(
-        "http://95.111.202.157:8001/api/v1/getAllRecipes"
-      );
+      const response = await getAllReceipe();
       setRecipes(response.data);
     };
 
@@ -107,47 +106,67 @@ function RecipeS() {
                 ml={5}
                 bg={"bisque"}
               >
+                  {recipes.slice(0,1).map((item) => (
                 <VStack mt={2}>
                   <Heading size={"md"}>Nutrition Information</Heading>
-                  <Grid templateRow="repeat(5, 1fr)" gap={6}>
-                    <GridItem mt={4}>
-                      <HStack w="275px" h="10" justifyContent={"space-between"}>
-                        <Text>Calories</Text> <Text>219.9 kcal</Text>
-                      </HStack>
-                    </GridItem>
-                    <GridItem>
-                      <HStack w="275px" h="10" justifyContent={"space-between"}>
-                        <Text>Total Fat</Text>
-                        <Text>10.7 g</Text>
-                      </HStack>
-                    </GridItem>
-                    <GridItem>
-                      <HStack w="275px" h="10" justifyContent={"space-between"}>
-                        <Text>Protein</Text>
-                        <Text>7.9 g</Text>
-                      </HStack>
-                    </GridItem>
-                    <GridItem>
-                      <HStack w="275px" h="10" justifyContent={"space-between"}>
-                        <Text>Carbohydrate</Text>
-                        <Text>22.5 g</Text>
-                      </HStack>
-                    </GridItem>
-                    <GridItem>
-                      <HStack w="275px" h="10" justifyContent={"space-between"}>
-                        <Text>Cholestral</Text>
-                        <Text>37.4 g</Text>
-                      </HStack>
-                    </GridItem>
-                  </Grid>
+                    <Grid  gap={6}>
+                      <GridItem mt={4}>
+                        <HStack
+                          w="275px"
+                          h="10"
+                          justifyContent={"space-between"}
+                        >
+                          <Text>Calories</Text> <Text>{item.nutritionInformation.calories}</Text>
+                        </HStack>
+                      </GridItem>
+                      <GridItem>
+                        <HStack
+                          w="275px"
+                          h="10"
+                          justifyContent={"space-between"}
+                        >
+                          <Text>Total Fat</Text>
+                          <Text>{item.nutritionInformation.totalFat}</Text>
+                        </HStack>
+                      </GridItem>
+                      <GridItem>
+                        <HStack
+                          w="275px"
+                          h="10"
+                          justifyContent={"space-between"}
+                        >
+                          <Text>Protein</Text>
+                          <Text>{item.nutritionInformation.protein}</Text>
+                        </HStack>
+                      </GridItem>
+                      <GridItem>
+                        <HStack
+                          w="275px"
+                          h="10"
+                          justifyContent={"space-between"}
+                        >
+                          <Text>Carbohydrate</Text>
+                          <Text>{item.nutritionInformation.carbohydrate}</Text>
+                        </HStack>
+                      </GridItem>
+                      <GridItem>
+                        <HStack
+                          w="275px"
+                          h="10"
+                          justifyContent={"space-between"}
+                        >
+                          <Text>Cholesterol</Text>
+                          <Text>{item.nutritionInformation.cholesterol}</Text>
+                        </HStack>
+                      </GridItem>
+                    </Grid>
                   <Box>
                     <Text mt={8} textAlign={"center"}>
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout.{" "}
+                      {item.nutritionInformation.nutritionTitle}
                     </Text>
                   </Box>
                 </VStack>
+                ))}
               </Box>
             </Flex>
           </VStack>

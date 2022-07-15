@@ -14,6 +14,7 @@ import {
   import { FiCircle } from "react-icons/fi";
   
   function Direction(props) {
+    
     return (
       <Box maxW={1024} mx={"auto"}>
         <Heading mt={20}>Direction</Heading>

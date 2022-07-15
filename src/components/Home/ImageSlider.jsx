@@ -18,13 +18,16 @@ import { MdOutlineSlowMotionVideo, MdKitchen } from "react-icons/md";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import moment from "moment";
+import {getPopularReceipes} from "../../utils/services"
 
 const ImageSlider = ({ slides }) => {
   const [data, setData] = useState([]);
+  const imagePath = "https://foodielandnod.herokuapp.com/";
+
 
   const getPopularReceipeData = async () => {
     const URL = "https://foodielandnod.herokuapp.com/api/popularRecipes";
-    const res = await axios.get(URL);
+    const res = await getPopularReceipes();
     const receipeData = res.data;
     setData(receipeData);
   };
@@ -86,7 +89,7 @@ const ImageSlider = ({ slides }) => {
                       size="sm"
                       name="Kent Dodds"
                       src={
-                        "https://foodielandnod.herokuapp.com/" +
+                        imagePath +
                         item.recipeId.categoryId.image
                       }
                     />{' '}
@@ -108,7 +111,7 @@ const ImageSlider = ({ slides }) => {
                 </Wrap>
               </Box>
               <Box w={512}>
-                    <Image src={"food-1.png"} height="500px" />
+                    <Image src={imagePath + item.recipeId.image} height="500px" />
               </Box>
             </Flex>
           </Box>

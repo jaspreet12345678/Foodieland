@@ -12,14 +12,17 @@ import React from "react";
 import { Component } from "react";
 import { BsFillAlarmFill } from "react-icons/bs";
 import { ImSpoonKnife } from "react-icons/im";
+import { getAllReceipe } from "../../utils/services";
 class Recipe extends Component {
   state = {
     popularRecipe: [],
   };
 
+  imagePath = "https://foodielandnod.herokuapp.com/";
+
   async componentDidMount() {
     const url = "https://foodielandnod.herokuapp.com/api/v1/getAllRecipes";
-    const recipe = await axios.get(url);
+    const recipe = await getAllReceipe();
     const popularRecipe = recipe.data;
     console.log(popularRecipe);
     this.setState({ popularRecipe: popularRecipe });
@@ -39,9 +42,7 @@ class Recipe extends Component {
                   h={200}
                   w="100%"
                   src={
-                    "https://foodielandnod.herokuapp.com/" + item.recipeId.image
-                      ? "banana.png"
-                      : "https://foodielandnod.herokuapp.com/" +
+                  this.imagePath +
                         item.recipeId.image
                   }
                 />

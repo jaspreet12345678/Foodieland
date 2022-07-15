@@ -2,12 +2,26 @@ import { Box, Flex, Heading, Stack, List, ListItem, ListIcon, VStack, Divider, H
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { FiCircle } from "react-icons/fi";
+import axios from "axios";
+import {useState, useEffect } from "react";
+import { getAllReceipe } from "../../utils/services";
 
 function Ingrediants(props) {
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    const loadPost = async () => {
+      const response = await getAllReceipe();
+      setRecipes(response.data);
+    };
+
+    loadPost();
+  }, []);
   return (
     <Box maxW={1024} mx={"auto"}>
       <Flex mt={10}>
         <Box>
+          {recipes.slice(0,1).map((item) => (
           <Stack spacing={5}>
             <Heading fontSize={"4xl"}>Ingredients</Heading>
             <Heading fontSize={"lg"}>For Main Dish</Heading>
@@ -63,6 +77,7 @@ function Ingrediants(props) {
             </List>
             </VStack>
           </Stack>
+          ))}
         </Box>
         <Spacer />
         <Box w={380}>

@@ -3,15 +3,17 @@ import axios from "axios";
 import { Box, Heading, Flex, SimpleGrid, Text, Button, Image, HStack } from "@chakra-ui/react";
 import { BsFillAlarmFill } from "react-icons/bs";
 import { ImSpoonKnife } from "react-icons/im";
+import {getAllReceipe} from "../../utils/services"
 
 class AllReceipes extends Component {
   state = {
     popularReceipes: [],
   };
+  imagePath = "https://foodielandnod.herokuapp.com/";
 
   async componentDidMount() {
     const URL = "https://foodielandnod.herokuapp.com/api/v1/getAllRecipes";
-    const res = await axios.get(URL);
+    const res = await getAllReceipe();
     const popularReceipes = res.data;
     console.log(popularReceipes);
     this.setState({ popularReceipes });
@@ -34,7 +36,7 @@ class AllReceipes extends Component {
                   ImageobjectFit="fill"
                   h={200}
                   w="100%"
-                  src={"https://foodielandnod.herokuapp.com/" + item.recipeId.image ? "download.jpeg" : "https://foodielandnod.herokuapp.com/" + item.recipeId.image}
+                  src={this.imagePath + item.recipeId.image}
                 />
                 <Heading size="md" fontWeight="bold">
                   {item.recipeId.title}

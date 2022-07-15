@@ -13,14 +13,16 @@ import React from "react";
 import { Component } from "react";
 import { BsFillAlarmFill } from "react-icons/bs";
 import { ImSpoonKnife } from "react-icons/im";
+import { getAllReceipe } from "../../utils/services";
 class Recipe extends Component {
   state = {
     popularRecipe: [],
   };
+  imagePath = "https://foodielandnod.herokuapp.com/";
 
   async componentDidMount() {
     const url = "https://foodielandnod.herokuapp.com/api/v1/getAllRecipes";
-    const recipe = await axios.get(url);
+    const recipe = await getAllReceipe();
     const popularRecipe = recipe.data;
     console.log(popularRecipe);
     this.setState({ popularRecipe: popularRecipe });
@@ -36,14 +38,17 @@ class Recipe extends Component {
           </Text>
         </Stack>
         <SimpleGrid columns={3} spacing={6}>
-          {this.state.popularRecipe.slice(0,3).map((item) => {
+          {this.state.popularRecipe.slice(0, 3).map((item) => {
             return (
               <Box p={3} bg="#EBF8FF" borderRadius={20} as="article" mt={15}>
                 <Image
                   ImageobjectFit="fill"
                   h={200}
                   w="100%"
-                  src={"https://foodielandnod.herokuapp.com/" + item.recipeId.image ? "banana.png" : "https://foodielandnod.herokuapp.com/" + item.recipeId.image }
+                  src={
+                    this.imagePath +
+                        item.recipeId.image
+                  }
                 />
                 <Heading size="md" fontWeight="bold">
                   {item.recipeId.title}
