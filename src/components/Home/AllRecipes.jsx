@@ -15,7 +15,6 @@ class AllReceipes extends Component {
     const URL = "https://foodielandnod.herokuapp.com/api/v1/getAllRecipes";
     const res = await getAllReceipe();
     const popularReceipes = res.data;
-    console.log(popularReceipes);
     this.setState({ popularReceipes });
   }
   render() {

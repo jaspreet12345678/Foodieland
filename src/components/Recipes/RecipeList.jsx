@@ -21,7 +21,7 @@ import { TbToolsKitchen2 } from "react-icons/tb";
 import { getAllReceipe } from "../../utils/services";
 function RecipeS() {
   const [recipes, setRecipes] = useState([]);
-  const imagePath = "https://foodielandnod.herokuapp.com/";
+
   useEffect(() => {
     const loadPost = async () => {
       const response = await getAllReceipe();

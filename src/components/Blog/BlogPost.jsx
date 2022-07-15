@@ -10,7 +10,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import moment from "moment";
-import { Link } from "react-router-dom";
+
 const BlogPostList = ({ posts }) => {
   const imgPath = "https://foodielandnod.herokuapp.com/";
 
