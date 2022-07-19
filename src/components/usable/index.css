@@ -1,0 +1,35 @@
+.common:hover{
+    color:  #ff6600;
+    text-decoration: none;
+}
+.facebook:hover{
+    color: blue;
+}
+.instagram:hover{
+    color: #f09433;
+}
+.twitter:hover{
+    color: #1DA1F2;
+}
+.logo:hover{
+    color:#ff6600;
+}
+ .logo:hover{
+    display: #ff6600;
+
+    text-align: center;
+    letter-spacing: .04em;
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: normal;
+
+    background-position: center center;
+    text-decoration: none;
+  }
+  nav{
+    margin-left: 450px;
+  }
+  .red{
+    color: tomato;
+  }

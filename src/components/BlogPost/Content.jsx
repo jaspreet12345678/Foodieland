@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
-function Content() {
+function Content(props) {
   return (
     <Flex mt={10} maxW={1024} mx={"auto"}>
       <Box w={800}>
@@ -45,7 +45,7 @@ function Content() {
           <Heading mt={10} fontSize={"1xl"}>
             Do you cook at home on your days off
           </Heading>
-          <Image borderLeftRadius={"3xl"} borderRightRadius={"3xl"} mt={3} src={"Cooking.jpg"} />
+          <Image borderLeftRadius={"3xl"} borderRightRadius={"3xl"} mt={3} src={"panner.png"} />
         </Box>
         <Box>
           <Text mt={10} fontSize={"3xl"} bg={"lightgray"}>

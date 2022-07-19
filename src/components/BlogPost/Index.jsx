@@ -6,11 +6,13 @@ import Recipe from "./Recipe2";
 import Footer from "../usable/Footer"
 import Content from './Content';
 
-const BlogPostMain = () => {
+const BlogPostMain = (props) => {
+    const blogId = props.match.params.blogId;
+    console.log(blogId)
     return ( 
         <>
         <Header />
-        <Chef />
+        <Chef blogId = {blogId}/>
         <Content />
         <Static />
         <Recipe />

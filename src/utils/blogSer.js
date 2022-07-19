@@ -14,6 +14,10 @@ export const getSearchQuery = (query) => {
     return axios.get(apiEndPoint + 'searchBlog?key=' + query );
 }
 
+export const getSearch = (query) => {
+    return axios.get(apiEndPoint + 'searcRecipe?key' + query );
+}
+
 export const getOneBlogPost = (blogId) => {
     return axios.get(apiEndPoint + 'getBlog?id=' + blogId);
 }

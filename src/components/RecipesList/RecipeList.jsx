@@ -84,6 +84,7 @@ function RecipeS() {
           <Box mt={5}>
             <Image borderRadius={"3xl"} w={650} h={470} src={"food-3.png"} />
           </Box>
+      
         </Box>
         <Box>
           <VStack>

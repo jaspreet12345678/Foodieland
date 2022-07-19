@@ -12,20 +12,20 @@ import {
 import moment from "moment";
 import { Link } from "react-router-dom";
 
-const BlogPostList = ({ posts, popularBlogs }) => {
+const RecipePostList = ({ posts, popularBlogs }) => {
   const imgPath = "https://foodielandnod.herokuapp.com/";
 
   return (
     <Box>
       <Flex mt={20}>
         <Box w={750}>
-          {posts.map((item) => {
+        {posts.map((item) => {
             return (
               <Flex mb={5}>
                 <Box w={250}>
                   <Link to={`/BlogPost/${item._id}`}>
                     <Img
-                      src={imgPath + item.image}
+                      src={imgPath + item.recipeId.image}
                       w={220}
                       h={200}
                       borderRadius={20}
@@ -33,18 +33,18 @@ const BlogPostList = ({ posts, popularBlogs }) => {
                   </Link>
                 </Box>
                 <Box w={400}>
-                  <Heading fontSize={"md"}>{item.title}</Heading>
+                  <Heading fontSize={"md"}>{item.recipeId.title}</Heading>
                   <Text
                     fontSize={"sm"}
                     color={"gray.500"}
                     textAlign={"justify"}
                   >
-                    {item.description}
+                    {item.recipeId.description}
                   </Text>
                   <HStack mt={35}>
                     <Avatar
                       name="AV"
-                      src={imgPath + item.userId.Image}
+                      src={ imgPath + item.recipeId.userId.Image}
                       size="sm"
                     />
                     <Heading fontSize={"sm"} fontWeight={800}>
@@ -89,4 +89,4 @@ const BlogPostList = ({ posts, popularBlogs }) => {
   );
 };
 
-export default BlogPostList;
+export default RecipePostList;

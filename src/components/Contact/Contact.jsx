@@ -163,7 +163,7 @@ const Contact = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                           >
-                            <option disabled> Select a option</option>
+                            <option > Select a option</option>
                             <option>Advertising</option>
                             <option>Commercial</option>
                             <option>Support</option>
@@ -220,14 +220,15 @@ const Contact = () => {
             overflow={"hidden"}
             bgGradient="linear(to-b, white.0, blue.100)"
           >
-            <Image
+            
+            <Image justifyContent={"center"}
               alt={"Hero Image"}
               fit={"cover"}
               align={"center"}
-              w={"100%"}
-              h={"100%"}
+              // w={"100%"}
+              // h={"100%"}
               src={
-                "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/cooker%2Fimage-220.png?alt=media&token=acdfc1a1-ed68-4828-a969-cf76a35273d6%22"
+                "Cook-contact.png"
               }
             />
           </Box>

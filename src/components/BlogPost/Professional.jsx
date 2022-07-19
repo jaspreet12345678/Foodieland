@@ -1,45 +1,83 @@
-import React from "react";
+// import React, { useEffect } from "react";
 import {
-  Avatar,
   Box,
   Center,
+  Container,
+  Grid,
+  GridItem,
   Heading,
-  Icon,
+  HStack,
+  Avatar,
+  Stack,
   Text,
-  Image,
+  Img,
 } from "@chakra-ui/react";
-import { TbMinusVertical } from "react-icons/tb";
-function Chef() {
+import { useState, useEffect } from "react";
+import { getOneBlogPost } from "../../utils/blogSer";
+import moment from "moment";
+
+function BlogPosts(props) {
+  const [blog, setBlog] = useState([]);
+
+  const imgPath = "https://foodielandnod.herokuapp.com/";
+
+  const blogId = props.blogId;
+
+  const getBlogDetail = async () => {
+    const { data: blog } = await getOneBlogPost(blogId);
+    setBlog(blog.data);
+  };
+
+  useEffect(() => {
+    getBlogDetail();
+  }, []);
+
   return (
-    <Box maxW={1024} mx={"auto"}>
-      <Heading mt={10} textAlign={"center"}>
-        Full Guide to Becoming a Professional Chef
-      </Heading>
-      <Center>
-        <Box mt={10} display={"flex"}>
-          <Avatar name="Ryan Florence" src="https://bit.ly/ryan-florence" />
-          <Text ml={3} fontSize={"lg"} mt={5}>
-            John Smith
-          </Text>
-          <Icon mt={2} w={20} h={10} as={TbMinusVertical} />
-          <Text fontSize={"lg"} mt={5}>
-            15 march 2022
-          </Text>
+    <Container maxW={1080} mx={"auto"}>
+      <Box mt={20}>
+        <Heading textAlign={"center"} fontSize={"5xl"} fontWeight={800}>
+          {blog.title}
+        </Heading>
+        <Center>
+          <Grid templateColumns="repeat(2, 1fr)" gap={6} mt={10}>
+            <GridItem>
+              <HStack>
+                <Avatar
+                ><Img src={imgPath + blog && blog.userId && blog.userId &&  blog.userId.Image && blog.userId.Image}/></Avatar>
+                <Stack>
+                  <Heading fontSize={"sm"}>
+                    {blog &&
+                      blog.userId &&
+                      blog.userId &&
+                      blog.userId.firstName + "  " + blog.userId.lastName}
+                  </Heading>
+                </Stack>
+              </HStack>
+            </GridItem>
+            <GridItem>
+              <Text fontSize={"sm"} mt={3}>
+                {moment(
+                  blog.userId && blog.userId && blog.userId.createdAt
+                ).format("MMM Do YY")}
+              </Text>
+            </GridItem>
+          </Grid>
+        </Center>
+        <Text
+          mt={10}
+          fontSize={"sm"}
+          color={"gray.500"}
+          textAlign={"center"}
+          mx={20}
+        >
+          {blog.description}
+        </Text>
+        <Box mt={10}>
+          <Img src={imgPath + blog.image} w={"100%"} borderRadius={30} />
         </Box>
-      </Center>
-      <Text mt={8} textAlign={"center"}>
-        We have created a list of easy sandwich recipes you can make for
-        breakfast. But the highlight of these recipes is that <br />
-        they come with a desi twist
-      </Text>
-      <Image
-        mt={10}
-        borderLeftRadius={"3xl"}
-        borderRightRadius={"3xl"}
-        src={"Chef1.jpg"}
-      />
-    </Box>
+      </Box>
+    </Container>
   );
 }
 
-export default Chef;
+export default BlogPosts;
