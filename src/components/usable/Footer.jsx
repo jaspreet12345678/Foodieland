@@ -37,9 +37,9 @@ function Footer(props) {
               <NavLink className={"common"} to="/BlogList">
                 BlogList
               </NavLink>
-              <NavLink className={"common"} to="/BlogPost">
+              {/* <NavLink className={"common"} to="/BlogPost">
                 BlogPost
-              </NavLink>
+              </NavLink> */}
               <NavLink className={"common"} to="/Contact">
                 Contact
               </NavLink>

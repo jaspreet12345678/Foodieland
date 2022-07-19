@@ -43,7 +43,8 @@ function BlogPosts(props) {
             <GridItem>
               <HStack>
                 <Avatar
-                ><Img src={imgPath + blog && blog.userId && blog.userId &&  blog.userId.Image && blog.userId.Image}/></Avatar>
+                src={blog && blog.userId && imgPath + blog.userId.Image }
+                ></Avatar>
                 <Stack>
                   <Heading fontSize={"sm"}>
                     {blog &&
