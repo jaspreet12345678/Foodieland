@@ -17,6 +17,7 @@ function Category() {
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
+    window.scroll(0,0);
     const loadPost = async () => {
       const response = await getAllCategory();
       setCategory(response.data);

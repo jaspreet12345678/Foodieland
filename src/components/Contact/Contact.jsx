@@ -18,9 +18,47 @@ import {
   Container,
   Center,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import { Formik, Field } from "formik";
 import React from "react";
+import { setContact } from "../../utils/contact";
+import { useEffect } from "react";
 const Contact = () => {
+  // const [contact, setContact] = useState({
+  //   name: "",
+  //   email: "",
+  //   subject: "",
+  //   enquiryType: "",
+  //   message: "",
+  // });
+
+  // const doSubmit = async() => {
+  //   const response =  await setContact(contact);
+  //   this.setState({ userData: {
+  //       name: "",
+  //       email: "",
+  //       subject: "",
+  //       enquiryType: "",
+  //       message: "",
+  //     }})
+  // }
+
+  // const handleChange = ({ currentTarget: input }) => {
+  //   const userData = { ...contact };
+  //   userData[input.name] = input.value;
+  //   setContact({ userData });
+  // };
+
+
+  // const handleSubmit = (e) =>{
+  //   e.preventDefault();
+  //   doSubmit();
+  // };
+
+  // useEffect(() => {
+  //   window.scroll(0,0);
+  // }, []);
+
 
   return (
     <Container mt={6} mb={6} maxW="6xl">
@@ -47,7 +85,7 @@ const Contact = () => {
                   name: "",
                   email: "",
                   subject: "",
-                  enquery_type: "",
+                  enquiryType: "",
                   messages: "",
                 }}
                 validate={(values) => {
@@ -75,8 +113,8 @@ const Contact = () => {
                     errors.subject = "**subject Contain only characters";
                   }
 
-                  if (values.enquery_type === "") {
-                    errors.enquery_type = "** Please select Enquery type feild";
+                  if (values.enquiryType === "") {
+                    errors.enquiryType = "** Please select Enquery type feild";
                   }
 
                   return errors;
@@ -93,8 +131,8 @@ const Contact = () => {
                   errors,
                   touched,
                   handleChange,
-                  handleBlur,
                   handleSubmit,
+                  handleBlur,
                   isSubmitting,
                 }) => (
                   <form onSubmit={handleSubmit}>
@@ -158,8 +196,8 @@ const Contact = () => {
                         <Stack spacing={3}>
                           <Select
                             size="lg"
-                            name="enquery_type"
-                            value={values.enquery_type}
+                            name="enquiryType"
+                            value={values.enquiryType}
                             onChange={handleChange}
                             onBlur={handleBlur}
                           >
@@ -170,9 +208,9 @@ const Contact = () => {
                           </Select>
                         </Stack>
                         <Text color={"red"} fontSize={"sm"}>
-                          {errors.enquery_type &&
-                            touched.enquery_type &&
-                            errors.enquery_type}
+                          {errors.enquiryType &&
+                            touched.enquiryType &&
+                            errors.enquiryType}
                         </Text>
                       </FormControl>
                     </HStack>

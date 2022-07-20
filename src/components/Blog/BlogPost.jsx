@@ -66,7 +66,14 @@ const BlogPostList = ({ posts, popularBlogs }) => {
               {popularBlogs.slice(0, 3).map((data) => {
                 return (
                   <HStack mt={5}>
-                    <Img w={180} h={120} borderRadius={30} src={"food-1.png"} />
+                    <Link to={`BlogPost/${data._id}`}>
+                      <Img
+                        w={180}
+                        h={120}
+                        borderRadius={30}
+                        src={imgPath + data.image}
+                      />
+                    </Link>
                     <Stack>
                       <Heading fontSize={"lg"}>{data.title}</Heading>
                       <Heading fontSize={"sm"} color={"gray.400"}>

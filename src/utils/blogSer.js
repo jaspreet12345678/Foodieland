@@ -25,3 +25,9 @@ export const getOneBlogPost = (blogId) => {
 export const getOneReceipePost = (receipeId) => {
   return axios.get(apiEndPoint + "recipeDetails?id=" + receipeId);
 };
+
+export function setSubscription(user){
+  return axios.post(apiEndPoint, {  
+      email : user.email,
+  });
+};

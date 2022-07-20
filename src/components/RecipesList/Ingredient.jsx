@@ -42,7 +42,7 @@ function Ingrediants(props) {
     window.scrollTo(0, 0);
     getReceipeDetail();
     popularReceipeDetails();
-  }, []);
+  }, [receipeId]);
 
   const handleevent = () => {
     window.scroll(0, 0);

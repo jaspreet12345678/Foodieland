@@ -8,8 +8,13 @@ import {
   Text,
   Center,
 } from "@chakra-ui/react";
+import { useEffect } from "react";
 
 const Chef = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+
   return (
     <Box maxW={1024} mx="auto" mt={10}>
       <Heading fontSize={"5xl"}>Our professional Chef</Heading>

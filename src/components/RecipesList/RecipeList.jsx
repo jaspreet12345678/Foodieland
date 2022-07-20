@@ -35,7 +35,7 @@ function RecipeS(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
     getReceipeDetail();
-  }, []);
+  }, [receipeId]);
 
   return (
     <Box mt={20} maxW={1024} mx={"auto"}>
