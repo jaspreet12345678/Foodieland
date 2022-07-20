@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Flex, Heading, Image, Text, Button } from "@chakra-ui/react";
+
 const About = () => {
   return (
     <Flex mt={10} maxW={1024} mx="auto">
