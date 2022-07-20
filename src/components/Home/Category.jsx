@@ -10,7 +10,8 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import {getAllCategory} from "../../utils/services"
+import { getAllCategory } from "../../utils/services";
+import { Link } from "react-router-dom";
 
 function Category() {
   const [category, setCategory] = useState([]);
@@ -24,7 +25,10 @@ function Category() {
     loadPost();
   }, []);
 
- const imagePath = "https://foodielandnod.herokuapp.com/";
+  const imagePath = "https://foodielandnod.herokuapp.com/";
+  const handleevent = () =>{
+    window.scroll(0,0);
+  }
 
   return (
     <Box marginTop="60px" maxW={1024} mx={"auto"}>
@@ -38,11 +42,9 @@ function Category() {
         <Grid templateColumns="repeat(6, 1fr)" gap={6}>
           {category.slice(2, 8).map((item) => (
             <GridItem>
-              <Image
-                w={250}
-                h={150}
-                src={imagePath + item.image }
-              />
+              <Link to="#" onClick={handleevent}>
+                <Image w={250} h={150} src={imagePath + item.image} />
+              </Link>
               <Text fontSize={"md"} fontWeight={400} textAlign={"center"}>
                 {item.categoryName}
               </Text>

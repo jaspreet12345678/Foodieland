@@ -29,6 +29,7 @@ function BlogPosts(props) {
   };
 
   useEffect(() => {
+    window.scroll(0,0)
     getBlogDetail();
   }, []);
 

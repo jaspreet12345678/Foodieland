@@ -11,70 +11,94 @@ import {
 } from "@chakra-ui/react";
 import moment from "moment";
 import { Link } from "react-router-dom";
-
-const RecipePostList = ({ posts, popularBlogs }) => {
+const ReceipePostList = ({ posts, popularReceipe, searchQuery }) => {
   const imgPath = "https://foodielandnod.herokuapp.com/";
 
   return (
     <Box>
       <Flex mt={20}>
         <Box w={750}>
-        {posts.map((item) => {
-            return (
-              <Flex mb={5}>
-                <Box w={250}>
-                  <Link to={`/BlogPost/${item._id}`}>
-                    <Img
-                      src={imgPath + item.recipeId.image}
-                      w={220}
-                      h={200}
-                      borderRadius={20}
-                    />
-                  </Link>
-                </Box>
-                <Box w={400}>
-                  <Heading fontSize={"md"}>{item.recipeId.title}</Heading>
-                  <Text
-                    fontSize={"sm"}
-                    color={"gray.500"}
-                    textAlign={"justify"}
-                  >
-                    {item.recipeId.description}
-                  </Text>
-                  <HStack mt={35}>
-                    <Avatar
-                      name="AV"
-                      src={ imgPath + item.recipeId.userId.Image}
-                      size="sm"
-                    />
-                    <Heading fontSize={"sm"} fontWeight={800}>
-                      {item.userId.firstName + " " + item.userId.lastName}
-                    </Heading>
-                    <Text fontSize={"sm"} color={"gray.500"}>
-                      {moment(item.userId.createdAt).format("MMM Do YY")}
+          {posts
+            .filter((value) => {
+              if (searchQuery === "") {
+                return value;
+              } else if (
+                value.recipeId.title
+                  .toLowerCase()
+                  .includes(searchQuery.toLowerCase())
+              ) {
+                return value;
+              }
+            })
+            .map((item) => {
+              return (
+                <Flex mb={5}>
+                  <Box w={250}>
+                    <Link to={`/RecipePost/${item._id}`}>
+                      <Img
+                        src={imgPath + item.recipeId.image}
+                        w={220}
+                        h={200}
+                        borderRadius={20}
+                      />
+                    </Link>
+                  </Box>
+                  <Box w={400}>
+                    <Heading fontSize={"md"}>{item.recipeId.title}</Heading>
+                    <Text
+                      fontSize={"sm"}
+                      color={"gray.500"}
+                      textAlign={"justify"}
+                    >
+                      {item.recipeId.description}
                     </Text>
-                  </HStack>
-                </Box>
-              </Flex>
-            );
-          })}
+                    <HStack mt={35}>
+                      <Avatar
+                        name="AV"
+                        src={imgPath + item.recipeId.userId.Image}
+                        size="sm"
+                      />
+                      <Heading fontSize={"sm"} fontWeight={800}>
+                        {item.recipeId.userId.firstName +
+                          " " +
+                          item.recipeId.userId.lastName}
+                      </Heading>
+                      <Text fontSize={"sm"} color={"gray.500"}>
+                        {moment(item.recipeId.userId.createdAt).format(
+                          "MMM Do YY"
+                        )}
+                      </Text>
+                    </HStack>
+                  </Box>
+                </Flex>
+              );
+            })}
         </Box>
         <Box ml={10}>
           <Heading fontSize={"2xl"}>Tasty Receipes</Heading>
           <Flex>
             <Box>
-              {popularBlogs.slice(0, 3).map((data) => {
+              {popularReceipe.slice(1, 4).map((data) => {
                 return (
                   <HStack mt={5}>
-                    <Img w={180} h={120} borderRadius={30} src={"food-1.png"} />
+                    <Box w={180}>
+                      <Link to={`/RecipePost/${data._id}`}>
+                        <Img
+                          w={180}
+                          h={120}
+                          borderRadius={30}
+                          src={imgPath + data.recipeId.image}
+                        />
+                      </Link>
+                    </Box>
                     <Stack>
-                      <Heading fontSize={"lg"}>{data.title}</Heading>
+                      <Heading fontSize={"lg"}>{data.recipeId.title}</Heading>
                       <Heading fontSize={"sm"} color={"gray.400"}>
                         {"By" +
                           " " +
-                          data.userId.firstName +
+                          data.recipeId.userId.firstName +
                           " " +
-                          data.userId.lastName}
+                          data.recipeId.userId.lastName}
                       </Heading>
                     </Stack>
                   </HStack>
@@ -89,4 +113,4 @@ const RecipePostList = ({ posts, popularBlogs }) => {
   );
 };
 
-export default RecipePostList;
+export default ReceipePostList;

@@ -6,8 +6,10 @@ import {
   Divider,
   Spacer,
   HStack,
+  Button,
 } from "@chakra-ui/react";
 import React from "react";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { Avatar } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import "./index.css"
@@ -33,9 +35,19 @@ const Header = () => {
             </HStack>
           </Flex>
           <Spacer />
-          <Flex>
-            <Avatar src="https://bit.ly/broken-link" />
-          </Flex>
+          <Flex alignItems={"end"}>
+              <Stack direction={"row"} spacing={7}>
+                <Button bg={"white"}>
+                  {<FaFacebook className="facebook" />}
+                </Button>
+                <Button bg={"white"}>
+                  {<FaTwitter className="twitter" />}
+                </Button>
+                <Button bg={"white"}>
+                  {<FaInstagram className="instagram" />}
+                </Button>
+              </Stack>
+            </Flex>
         </Stack>
         <Divider border="2px" />
       </Box>

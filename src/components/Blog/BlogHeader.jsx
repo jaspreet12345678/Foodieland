@@ -38,6 +38,7 @@ function BlogHeader() {
   };
 
   useEffect(() => {
+    window.scroll(0,0);
     blogsDetails();
     popularBlogsDetails();
   }, []);

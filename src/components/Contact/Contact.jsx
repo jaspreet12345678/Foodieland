@@ -21,6 +21,7 @@ import {
 import { Formik, Field } from "formik";
 import React from "react";
 const Contact = () => {
+
   return (
     <Container mt={6} mb={6} maxW="6xl">
       <Stack
@@ -82,11 +83,10 @@ const Contact = () => {
                 }}
                 onSubmit={(values, { setSubmitting }) => {
                   setTimeout(() => {
-                    console.log(values)
+                    console.log(values);
                     setSubmitting(false);
                   }, 400);
                 }}
-            
               >
                 {({
                   values,
@@ -163,7 +163,7 @@ const Contact = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                           >
-                            <option > Select a option</option>
+                            <option> Select a option</option>
                             <option>Advertising</option>
                             <option>Commercial</option>
                             <option>Support</option>
@@ -220,16 +220,14 @@ const Contact = () => {
             overflow={"hidden"}
             bgGradient="linear(to-b, white.0, blue.100)"
           >
-            
-            <Image justifyContent={"center"}
+            <Image
+              justifyContent={"center"}
               alt={"Hero Image"}
               fit={"cover"}
               align={"center"}
               // w={"100%"}
               // h={"100%"}
-              src={
-                "Cook-contact.png"
-              }
+              src={"Cook-contact.png"}
             />
           </Box>
         </Flex>

@@ -2,18 +2,17 @@ import React from "react";
 import Footer from "../usable/Footer";
 import Header from "../usable/Header";
 import Static from "../usable/Static";
-import BlogHeader from "./BlogHeader";
-import RecipeHeader from "./RecipeHeader";
+import ReceipeHeader from "./RecipeHeader";
 
-function BlogLists(props) {
+function RecipeList(props) {
   return (
     <>
       <Header />
-      <RecipeHeader />
+      <ReceipeHeader />
       <Static />
       <Footer />
     </>
   );
 }
 
-export default BlogLists;
+export default RecipeList;

@@ -12,6 +12,7 @@ import React from "react";
 import { Component } from "react";
 import { BsFillAlarmFill } from "react-icons/bs";
 import { ImSpoonKnife } from "react-icons/im";
+import { Link } from "react-router-dom";
 import { getAllReceipe } from "../../utils/services";
 class Recipe extends Component {
   state = {
@@ -36,15 +37,14 @@ class Recipe extends Component {
           {this.state.popularRecipe.slice(0, 3).map((item) => {
             return (
               <Box p={3} bg="#EBF8FF" borderRadius={20} as="article" mt={15}>
-                <Image
-                  ImageobjectFit="fill"
-                  h={200}
-                  w="100%"
-                  src={
-                  this.imagePath +
-                        item.recipeId.image
-                  }
-                />
+                <Link to={`RecipePost/${item._id}`}>
+                  <Image
+                    ImageobjectFit="fill"
+                    h={200}
+                    w="100%"
+                    src={this.imagePath + item.recipeId.image}
+                  />
+                </Link>
                 <Heading size="md" fontWeight="bold">
                   {item.recipeId.title}
                 </Heading>

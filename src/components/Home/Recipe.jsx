@@ -7,6 +7,7 @@ import {
   SimpleGrid,
   HStack,
   Button,
+  Img
 } from "@chakra-ui/react";
 import axios from "axios";
 import React from "react";
@@ -14,11 +15,16 @@ import { Component } from "react";
 import { BsFillAlarmFill } from "react-icons/bs";
 import { ImSpoonKnife } from "react-icons/im";
 import { getAllReceipe } from "../../utils/services";
+import { Link } from "react-router-dom";
 class Recipe extends Component {
   state = {
     popularRecipe: [],
   };
   imagePath = "https://foodielandnod.herokuapp.com/";
+
+  componentDidMount() {
+    window.scroll(0,0);
+  }
 
   async componentDidMount() {
     const url = "https://foodielandnod.herokuapp.com/api/v1/getAllRecipes";
@@ -40,12 +46,14 @@ class Recipe extends Component {
           {this.state.popularRecipe.slice(0, 6).map((item) => {
             return (
               <Box p={3} bg="#EBF8FF" borderRadius={20} as="article" mt={15}>
-                <Image
-                  ImageobjectFit="fill"
-                  h={200}
-                  w="100%"
-                  src={this.imagePath + item.recipeId.image}
-                />
+                <Link to={`/RecipePost/${item._id}`}>
+                  <Img
+                    src={this.imagePath + item.recipeId.image}
+                    borderRadius={20}
+                    h={200}
+                    w="100%"
+                  />
+                </Link>
                 <Heading size="md" fontWeight="bold">
                   {item.recipeId.title}
                 </Heading>

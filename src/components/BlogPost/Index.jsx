@@ -1,5 +1,5 @@
 import React from 'react'
-import Chef from './Professional';
+import BlogPosts from './Professional';
 import Header from "../usable/Header";
 import Static from "../usable/Static";
 import Recipe from "./Recipe2";
@@ -8,11 +8,10 @@ import Content from './Content';
 
 const BlogPostMain = (props) => {
     const blogId = props.match.params.blogId;
-    console.log(blogId)
     return ( 
         <>
         <Header />
-        <Chef blogId = {blogId}/>
+        <BlogPosts blogId = {blogId}/>
         <Content />
         <Static />
         <Recipe />
