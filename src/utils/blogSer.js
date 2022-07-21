@@ -28,7 +28,7 @@ export const getOneReceipePost = (receipeId) => {
 };
 
 export function setSubscription(user){
-  return axios.post(apiEndPoint, {  
+  return axios.post(apiEndPoint + 'subscribe', {  
       email : user.email,
   });
 };

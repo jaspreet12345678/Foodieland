@@ -1,7 +1,7 @@
 import Footer from "../UsableComponents/Footer";
 import Header from "../UsableComponents/Header";
 import Recipe from "./ContactComponents/Recipe";
-import Static from "../UsableComponents/Static";
+import Subscription from "../UsableComponents/Subscription";
 import Contact from "./ContactComponents/Contact";
 
 const ContactMain = () => {
@@ -9,7 +9,7 @@ const ContactMain = () => {
     <>
       <Header />
       <Contact />
-      <Static />
+      <Subscription />
       <Recipe />
       <Footer />
     </>

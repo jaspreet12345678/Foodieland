@@ -32,45 +32,45 @@ const ReceipePostList = ({ posts, popularReceipe, searchQuery }) => {
             })
             .map((item) => {
               return (
-                <Flex mb={5}>
-                  <Box w={250}>
-                    <Link to={`/recipedetail/${item._id}`}>
+                <Link to={`/recipedetail/${item._id}`}>
+                  <Flex mb={5}>
+                    <Box w={250}>
                       <Img
                         src={imgPath + item.recipeId.image}
                         w={220}
                         h={200}
                         borderRadius={20}
                       />
-                    </Link>
-                  </Box>
-                  <Box w={400}>
-                    <Heading fontSize={"md"}>{item.recipeId.title}</Heading>
-                    <Text
-                      fontSize={"sm"}
-                      color={"gray.500"}
-                      textAlign={"justify"}
-                    >
-                      {item.recipeId.description}
-                    </Text>
-                    <HStack mt={35}>
-                      <Avatar
-                        name="AV"
-                        src={imgPath + item.recipeId.userId.Image}
-                        size="sm"
-                      />
-                      <Heading fontSize={"sm"} fontWeight={800}>
-                        {item.recipeId.userId.firstName +
-                          " " +
-                          item.recipeId.userId.lastName}
-                      </Heading>
-                      <Text fontSize={"sm"} color={"gray.500"}>
-                        {moment(item.recipeId.userId.createdAt).format(
-                          "MMM Do YY"
-                        )}
+                    </Box>
+                    <Box w={400}>
+                      <Heading fontSize={"md"}>{item.recipeId.title}</Heading>
+                      <Text
+                        fontSize={"sm"}
+                        color={"gray.500"}
+                        textAlign={"justify"}
+                      >
+                        {item.recipeId.description}
                       </Text>
-                    </HStack>
-                  </Box>
-                </Flex>
+                      <HStack mt={35}>
+                        <Avatar
+                          name="AV"
+                          src={imgPath + item.recipeId.userId.Image}
+                          size="sm"
+                        />
+                        <Heading fontSize={"sm"} fontWeight={800}>
+                          {item.recipeId.userId.firstName +
+                            " " +
+                            item.recipeId.userId.lastName}
+                        </Heading>
+                        <Text fontSize={"sm"} color={"gray.500"}>
+                          {moment(item.recipeId.userId.createdAt).format(
+                            "MMM Do YY"
+                          )}
+                        </Text>
+                      </HStack>
+                    </Box>
+                  </Flex>
+                </Link>
               );
             })}
         </Box>
@@ -80,28 +80,28 @@ const ReceipePostList = ({ posts, popularReceipe, searchQuery }) => {
             <Box>
               {popularReceipe.slice(1, 4).map((data) => {
                 return (
-                  <HStack mt={5}>
-                    <Box w={180}>
-                      <Link to={`/recipedetail/${data._id}`}>
+                  <Link to={`/recipedetail/${data._id}`}>
+                    <HStack mt={5}>
+                      <Box w={180}>
                         <Img
                           w={180}
                           h={120}
                           borderRadius={30}
                           src={imgPath + data.recipeId.image}
                         />
-                      </Link>
-                    </Box>
-                    <Stack>
-                      <Heading fontSize={"lg"}>{data.recipeId.title}</Heading>
-                      <Heading fontSize={"sm"} color={"gray.400"}>
-                        {"By" +
-                          " " +
-                          data.recipeId.userId.firstName +
-                          " " +
-                          data.recipeId.userId.lastName}
-                      </Heading>
-                    </Stack>
-                  </HStack>
+                      </Box>
+                      <Stack>
+                        <Heading fontSize={"lg"}>{data.recipeId.title}</Heading>
+                        <Heading fontSize={"sm"} color={"gray.400"}>
+                          {"By" +
+                            " " +
+                            data.recipeId.userId.firstName +
+                            " " +
+                            data.recipeId.userId.lastName}
+                        </Heading>
+                      </Stack>
+                    </HStack>
+                  </Link>
                 );
               })}
             </Box>

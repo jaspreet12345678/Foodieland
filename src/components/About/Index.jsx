@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../UsableComponents/Footer";
 import Header from "../UsableComponents/Header";
 import Recipe from "../Home/HomeComponents/Recipe";
-import Static from "../UsableComponents/Static";
+import Subscription from "../UsableComponents/Subscription";
 import About from "./AboutComponents/About";
 import Chef from "./AboutComponents/Chef";
 
@@ -11,7 +11,7 @@ const Index = () => {
   <Header />
   <About />
   <Chef />
-  <Static />
+  <Subscription />
   <Recipe />
   <Footer />
   </>;

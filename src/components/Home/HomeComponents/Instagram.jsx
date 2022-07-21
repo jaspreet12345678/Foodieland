@@ -9,10 +9,11 @@ import {
   Center,
   Box,
   VStack,
+  Icon,
+  HStack,
 } from "@chakra-ui/react";
 import { FaInstagram } from "react-icons/fa";
 const Instagram = () => {
-
   return (
     <>
       <Box>
@@ -78,7 +79,11 @@ const Instagram = () => {
             <Flex>
               <Center>
                 <Button bg={"black"} color={"white"}>
-                  View our Instagram <FaInstagram />
+                  <a href="https://www.instagram.com/foodieland555/">
+                    <HStack>
+                      <Text>View our Instagram</Text> <Icon as={FaInstagram} />
+                    </HStack>
+                  </a>
                 </Button>
               </Center>
             </Flex>

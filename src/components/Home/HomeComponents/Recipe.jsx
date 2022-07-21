@@ -43,33 +43,33 @@ class Recipe extends Component {
         <SimpleGrid columns={3} spacing={6}>
           {this.state.popularRecipe.slice(0, 6).map((item) => {
             return (
-              <Box p={3} bg="#EBF8FF" borderRadius={20} as="article" mt={15}>
-                <Link to={`/recipedetail/${item._id}`}>
+              <Link to={`/recipedetail/${item._id}`}>
+                <Box p={3} bg="#EBF8FF" borderRadius={20} as="article" mt={15}>
                   <Img
                     src={this.imagePath + item.recipeId.image}
                     borderRadius={20}
                     h={200}
                     w="100%"
                   />
-                </Link>
-                <Heading mt={2} size="sm" fontWeight="bold">
-                  {item.recipeId.title}
-                </Heading>
-                <HStack mt={2} justifyItems={"space-between"}>
-                  <HStack>
-                    <Icon ml={5} as={BsFillAlarmFill} />
-                    <Text borderRadius="10px" bgColor="#EDFDFD">
-                      {item.recipeId.cookTime}
-                    </Text>
+                  <Heading mt={2} size="sm" fontWeight="bold">
+                    {item.recipeId.title}
+                  </Heading>
+                  <HStack mt={2} justifyItems={"space-between"}>
+                    <HStack>
+                      <Icon ml={5} as={BsFillAlarmFill} />
+                      <Text borderRadius="10px" bgColor="#EDFDFD">
+                        {item.recipeId.cookTime}
+                      </Text>
+                    </HStack>
+                    <HStack>
+                      <Icon ml={25} as={ImSpoonKnife} />
+                      <Text borderRadius="10px" bgColor="#EDFDFD">
+                        {item.recipeId.categoryId.categoryName}
+                      </Text>
+                    </HStack>
                   </HStack>
-                  <HStack >
-                    <Icon ml={25} as={ImSpoonKnife} />
-                    <Text borderRadius="10px" bgColor="#EDFDFD">
-                      {item.recipeId.categoryId.categoryName}
-                    </Text>
-                  </HStack>
-                </HStack>
-              </Box>
+                </Box>
+              </Link>
             );
           })}
         </SimpleGrid>

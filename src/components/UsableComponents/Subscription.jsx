@@ -11,7 +11,7 @@ import {
 import React from "react";
 import { setSubscription } from "../../utils/blogSer";
 import { Component } from "react";
-class Static extends Component {
+class Subscription extends Component {
   state = {
     subscriptionData: {
       email: "",
@@ -106,4 +106,4 @@ class Static extends Component {
   }
 }
 
-export default Static;
+export default Subscription;

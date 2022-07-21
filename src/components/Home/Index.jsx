@@ -2,7 +2,7 @@ import React from "react";
 import Cooker from "./HomeComponents/Cooker";
 import Footer from "../UsableComponents/Footer";
 import Header from "../UsableComponents/Header";
-import Static from "../UsableComponents/Static";
+import Subscription from "../UsableComponents/Subscription";
 import { Box } from "@chakra-ui/react";
 import Categories from "./HomeComponents/Category";
 import ImageSlider from "./HomeComponents/ImageSlider";
@@ -21,7 +21,7 @@ const Index = (props) => {
       <Cooker />
       <Instagram />
       <AllReceipes />
-      <Static />
+      <Subscription />
       <Footer />
     </>
   );

@@ -1,7 +1,7 @@
 import React from 'react'
 import BlogPosts from './BlogDetailComponents/BlogDetail';
 import Header from "../UsableComponents/Header";
-import Static from "../UsableComponents/Static";
+import Subscription from "../UsableComponents/Subscription";
 import Recipe from "./BlogDetailComponents/Recipe";
 import Footer from "../UsableComponents/Footer"
 import Content from './BlogDetailComponents/Content';
@@ -13,7 +13,7 @@ const BlogPostMain = (props) => {
         <Header />
         <BlogPosts blogId = {blogId}/>
         <Content />
-        <Static />
+        <Subscription />
         <Recipe />
         <Footer />
         </>
