@@ -1,17 +1,17 @@
 import React from "react";
-import RecipeS from "./RecipeList";
-import Direction from "./Direction";
-import Ingrediants from "./Ingredient";
-import Header from "../usable/Header";
-import Static from "../usable/Static";
-import Recipe from "./Recipe2";
-import Footer from "../usable/Footer"
+import Direction from "./RecipeDetailComponent/Direction";
+import Ingrediants from "./RecipeDetailComponent/Ingredient";
+import Header from "../UsableComponents/Header";
+import Static from "../UsableComponents/Static";
+import Recipe from "./RecipeDetailComponent/Recipe";
+import Footer from "../UsableComponents/Footer"
+import RecipeDetail from "./RecipeDetailComponent/RecipeDetail";
 const ReceipeMain = (props) => {
   const receipeId = props.match.params.receipeId;
   return (
     <>
       <Header />
-      <RecipeS  receipeId = {receipeId}/>
+      <RecipeDetail  receipeId = {receipeId}/>
       <Ingrediants receipeId = {receipeId} />
       <Direction  receipeId = {receipeId}/>
       <Static />
