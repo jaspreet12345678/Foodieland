@@ -31,10 +31,10 @@ function Footer(props) {
                 Home
               </NavLink>
               <NavLink className={"common"} to="/recipes">
-                Receipe
+                Receipes
               </NavLink>
               <NavLink className={"common"} to="/blogs">
-                BlogList
+                Blogs
               </NavLink>
               <NavLink className={"common"} to="/contact">
                 Contact

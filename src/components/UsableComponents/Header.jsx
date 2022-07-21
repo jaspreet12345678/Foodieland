@@ -26,8 +26,8 @@ const Header = () => {
           <Flex justifyContent={"space-between"}>
             <HStack spacing={8}>
               <NavLink className="common" to="/home">Home</NavLink>
-              <NavLink className="common" to="/recipes">Receipe</NavLink>
-              <NavLink className="common" to="/blogs">BlogList</NavLink>
+              <NavLink className="common" to="/recipes">Receipes</NavLink>
+              <NavLink className="common" to="/blogs">Blogs</NavLink>
               <NavLink className="common" to="/contact">Contact</NavLink>
               <NavLink className="common" to="/about">About Us</NavLink>
             </HStack>
