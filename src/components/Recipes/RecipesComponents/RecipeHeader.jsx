@@ -6,7 +6,7 @@ import {
   Box,
   Input,
 } from "@chakra-ui/react";
-import ReceipePostList from "./RecipePost";
+import ReceipePostList from "./ReceipePostList";
 import Pagination from "../../UsableComponents/Pagination";
 import { getAllReceipe, getPopularReceipes } from "../../../utils/services";
 

@@ -48,22 +48,28 @@ function Footer(props) {
         <Divider />
         <Box mt={5} mb={10}>
           <Flex>
-              <Flex>
-                <Text fontWeight="600" justifyContent="center">
-                  2020 FlowBase Powered by WebFlow
-                </Text>
-              </Flex>
+            <Flex>
+              <Text fontWeight="600" justifyContent="center">
+                2020 FlowBase Powered by WebFlow
+              </Text>
+            </Flex>
             <Spacer />
             <Flex alignItems={"end"}>
               <Stack direction={"row"} spacing={7}>
                 <Button bg={"white"}>
-                  {<FaFacebook className="facebook" />}
+                  <a href="https://www.instagram.com/foodieland555/">
+                    {<FaFacebook className="facebook" />}
+                  </a>
                 </Button>
                 <Button bg={"white"}>
-                  {<FaTwitter className="twitter" />}
+                  <a href="https://www.instagram.com/foodieland555/">
+                    {<FaTwitter className="twitter" />}
+                  </a>
                 </Button>
                 <Button bg={"white"}>
-                  {<FaInstagram className="instagram" />}
+                  <a href="https://www.instagram.com/foodieland555/">
+                    {<FaInstagram className="instagram" />}
+                  </a>
                 </Button>
               </Stack>
             </Flex>

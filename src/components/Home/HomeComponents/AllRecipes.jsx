@@ -13,12 +13,12 @@ import { BsFillAlarmFill } from "react-icons/bs";
 import { ImSpoonKnife } from "react-icons/im";
 import { getAllReceipe } from "../../../utils/services";
 import { Link } from "react-router-dom";
-
+import { api } from "../../../config";
 class AllReceipes extends Component {
   state = {
     popularReceipes: [],
   };
-  imagePath = "https://foodielandnod.herokuapp.com/";
+  imagePath = api;
 
   componentDidMount() {
     window.scroll(0, 0);

@@ -19,41 +19,9 @@ import { Formik, Field } from "formik";
 import React from "react";
 import { useEffect } from "react";
 const Contact = () => {
-  // const [contact, setContact] = useState({
-  //   name: "",
-  //   email: "",
-  //   subject: "",
-  //   enquiryType: "",
-  //   message: "",
-  // });
-
-  // const doSubmit = async() => {
-  //   const response =  await setContact(contact);
-  //   this.setState({ userData: {
-  //       name: "",
-  //       email: "",
-  //       subject: "",
-  //       enquiryType: "",
-  //       message: "",
-  //     }})
-  // }
-
-  // const handleChange = ({ currentTarget: input }) => {
-  //   const userData = { ...contact };
-  //   userData[input.name] = input.value;
-  //   setContact({ userData });
-  // };
-
-
-  // const handleSubmit = (e) =>{
-  //   e.preventDefault();
-  //   doSubmit();
-  // };
-
   useEffect(() => {
-    window.scroll(0,0);
+    window.scroll(0, 0);
   }, []);
-
 
   return (
     <Container mt={6} mb={6} maxW="6xl">
@@ -114,9 +82,30 @@ const Contact = () => {
 
                   return errors;
                 }}
-                onSubmit={(values, { setSubmitting }) => {
+                onSubmit={(values, { setSubmitting }, event) => {
                   setTimeout(() => {
-                    console.log(values);
+                    const formdata = JSON.stringify(values, null, 2);
+
+                    fetch(
+                      "https://foodielandnod.herokuapp.com/api/addContactDetails",
+                      {
+                        method: "POST",
+                        headers: {
+                          Accept: "application/json",
+                          "Content-Type": "application/json",
+                        },
+                        body: formdata,
+                      }
+                    ).then(function (response) {
+                      console.log(response);
+                      if (response.status === 200) {
+                        alert("data submitted successfully");
+                      } else {
+                        alert("email allready exists");
+                        // resetForm(values) ;
+                      }
+                    });
+
                     setSubmitting(false);
                   }, 400);
                 }}

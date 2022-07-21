@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { getAllCategory } from "../../../utils/services";
 import { Link } from "react-router-dom";
+import { api } from "../../../config";
 
 function Category() {
   const [category, setCategory] = useState([]);
@@ -25,7 +26,7 @@ function Category() {
     loadPost();
   }, []);
 
-  const imagePath = "https://foodielandnod.herokuapp.com/";
+  const imagePath = api;
   const handleevent = () =>{
     window.scroll(0,0);
   }

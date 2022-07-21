@@ -40,7 +40,7 @@ class Recipe extends Component {
           {this.state.popularRecipe.slice(0, 3).map((item) => {
             return (
               <Box p={3} bg="#EBF8FF" borderRadius={20} as="article" mt={15}>
-                <Link to={`recipedetail/${item._id}`}>
+                <Link to={`/recipedetail/${item._id}`}>
                   <Image
                     h={200}
                     w="100%"

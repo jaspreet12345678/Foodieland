@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import BlogPostList from "./BlogPost";
+import BlogPostList from "./BlogPostList";
 import Pagination from "../../UsableComponents/Pagination";
 import {
   getAllBlogs,

@@ -15,11 +15,12 @@ import {
 import { useState, useEffect } from "react";
 import { getOneBlogPost } from "../../../utils/blogSer";
 import moment from "moment";
+import { api } from "../../../config";
 
-function BlogPosts(props) {
+function BlogDetail(props) {
   const [blog, setBlog] = useState([]);
 
-  const imgPath = "https://foodielandnod.herokuapp.com/";
+  const imgPath = api;
 
   const blogId = props.blogId;
 
@@ -82,4 +83,4 @@ function BlogPosts(props) {
   );
 }
 
-export default BlogPosts;
+export default BlogDetail;

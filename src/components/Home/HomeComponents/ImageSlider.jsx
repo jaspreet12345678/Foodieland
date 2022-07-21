@@ -8,7 +8,7 @@ import {
   Wrap,
   WrapItem,
   Avatar,
-  Image,
+  Img,
 } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -17,15 +17,15 @@ import { ImSpoonKnife } from "react-icons/im";
 import { MdOutlineSlowMotionVideo, MdKitchen } from "react-icons/md";
 import { useEffect, useState } from "react";
 import moment from "moment";
-import {getPopularReceipes} from "../../../utils/services";
+import { getPopularReceipes } from "../../../utils/services";
 import { Link } from "react-router-dom";
+import { api } from "../../../config";
 
-const ImageSlider = ( props ) => {
+const ImageSlider = (props) => {
   const [data, setData] = useState([]);
-  const imagePath = "https://foodielandnod.herokuapp.com/";
+  const imagePath = api;
 
   const getPopularReceipeData = async () => {
-    const URL = "https://foodielandnod.herokuapp.com/api/popularRecipes";
     const res = await getPopularReceipes();
     const receipeData = res.data;
     setData(receipeData);
@@ -38,7 +38,7 @@ const ImageSlider = ( props ) => {
 
   return (
     <Carousel infiniteLoop>
-      {data.map((item) => {
+      {data.slice(1,6).map((item) => {
         return (
           <Box>
             <Flex
@@ -88,11 +88,8 @@ const ImageSlider = ( props ) => {
                     <Avatar
                       size="sm"
                       name="Kent Dodds"
-                      src={
-                        imagePath +
-                        item.recipeId.categoryId.image
-                      }
-                    />{' '}
+                      src={imagePath + item.recipeId.categoryId.image}
+                    />{" "}
                     <Box pl={3}>
                       <Heading fontSize={"sm"}>
                         {item.recipeId.categoryId.firstName}
@@ -105,7 +102,11 @@ const ImageSlider = ( props ) => {
                     </Box>
                   </WrapItem>
                   <Link to={`/recipedetail/${item._id}`}>
-                    <Button borderRadius="10px" bgColor="#000" colorScheme="#fff">
+                    <Button
+                      borderRadius="10px"
+                      bgColor="#000"
+                      colorScheme="#fff"
+                    >
                       View Receipe
                       <MdOutlineSlowMotionVideo />
                     </Button>
@@ -113,7 +114,14 @@ const ImageSlider = ( props ) => {
                 </Wrap>
               </Box>
               <Box w={512}>
-                    <Image src={imagePath + item.recipeId.image} height="500px" />
+              <Link to={`/recipedetail/${item._id}`}>
+                  <Img
+                    src={imagePath + item.recipeId.image}
+                    borderRadius={20}
+                    h={500}
+                    w="100%"
+                  />
+                </Link>
               </Box>
             </Flex>
           </Box>

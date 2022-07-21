@@ -11,7 +11,7 @@ import {
 import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import "./index.css"
+import "./index.css";
 
 const Header = () => {
   return (
@@ -25,27 +25,44 @@ const Header = () => {
           </Flex>
           <Flex justifyContent={"space-between"}>
             <HStack spacing={8}>
-              <NavLink className="common" to="/home">Home</NavLink>
-              <NavLink className="common" to="/recipes">Receipes</NavLink>
-              <NavLink className="common" to="/blogs">Blogs</NavLink>
-              <NavLink className="common" to="/contact">Contact</NavLink>
-              <NavLink className="common" to="/about">About Us</NavLink>
+              <NavLink className="common" to="/home">
+                Home
+              </NavLink>
+              <NavLink className="common" to="/recipes">
+                Receipes
+              </NavLink>
+              <NavLink className="common" to="/blogs">
+                Blogs
+              </NavLink>
+              <NavLink className="common" to="/contact">
+                Contact
+              </NavLink>
+              <NavLink className="common" to="/about">
+                About Us
+              </NavLink>
             </HStack>
           </Flex>
           <Spacer />
           <Flex alignItems={"end"}>
-              <Stack direction={"row"} spacing={7}>
-                <Button bg={"white"}>
+            <Stack direction={"row"} spacing={7}>
+              <Button bg={"white"}>
+                <a href="https://www.instagram.com/foodieland555/">
                   {<FaFacebook className="facebook" />}
-                </Button>
-                <Button bg={"white"}>
+                </a>
+              </Button>
+              <Button bg={"white"}>
+                <a href="https://www.instagram.com/foodieland555/">
                   {<FaTwitter className="twitter" />}
-                </Button>
-                <Button bg={"white"}>
+                </a>
+              </Button>
+
+              <Button bg={"white"}>
+                <a href="https://www.instagram.com/foodieland555/">
                   {<FaInstagram className="instagram" />}
-                </Button>
-              </Stack>
-            </Flex>
+                </a>
+              </Button>
+            </Stack>
+          </Flex>
         </Stack>
         <Divider border="2px" />
       </Box>

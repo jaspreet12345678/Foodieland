@@ -13,13 +13,14 @@ import { Component } from "react";
 import { BsFillAlarmFill } from "react-icons/bs";
 import { ImSpoonKnife } from "react-icons/im";
 import { Link } from "react-router-dom";
+import { api } from "../../../config";
 import { getAllReceipe } from "../../../utils/services";
 class Recipe extends Component {
   state = {
     popularRecipe: [],
   };
 
-  imagePath = "https://foodielandnod.herokuapp.com/";
+  imagePath = api;
 
   async componentDidMount() {
     const url = "https://foodielandnod.herokuapp.com/api/v1/getAllRecipes";

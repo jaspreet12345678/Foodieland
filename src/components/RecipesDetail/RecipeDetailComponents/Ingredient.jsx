@@ -18,11 +18,12 @@ import { useState, useEffect } from "react";
 import { getOneReceipePost } from "../../../utils/blogSer";
 import { Link } from "react-router-dom";
 import { getPopularReceipes } from "../../../utils/services";
+import { api } from "../../../config";
 
 function Ingrediants(props) {
   const [popularReceipe, setPopularReceipe] = useState([]);
   const [recipes, setRecipes] = useState([]);
-  const imgPath = "https://foodielandnod.herokuapp.com/";
+  const imgPath = api;
   const receipeId = props.receipeId;
 
   const popularReceipeDetails = async () => {
@@ -37,10 +38,9 @@ function Ingrediants(props) {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     getReceipeDetail();
     popularReceipeDetails();
-  }, [receipeId]);
+  }, []);
 
   const handleevent = () => {
     window.scroll(0, 0);
@@ -142,7 +142,7 @@ function Ingrediants(props) {
               return (
                 <HStack>
                   <Box w={150}>
-                    <Link to={`/recipedetail/${data._id}`} onClick={handleevent}>
+                    <Link to={`/recipedetail/${data._id}`} >
                       <Img
                         w={180}
                         h={120}

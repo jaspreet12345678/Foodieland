@@ -6,7 +6,7 @@ import Static from "../UsableComponents/Static";
 import About from "./AboutComponents/About";
 import Chef from "./AboutComponents/Chef";
 
-const AboutUs = () => {
+const Index = () => {
   return <>
   <Header />
   <About />
@@ -17,4 +17,4 @@ const AboutUs = () => {
   </>;
 };
 
-export default AboutUs;
+export default Index;

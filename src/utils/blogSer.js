@@ -1,6 +1,7 @@
 import axios from "axios";
+import { blogs } from "../config";
 
-const apiEndPoint = "https://foodielandnod.herokuapp.com/api/";
+const apiEndPoint = blogs;
 
 export const getAllBlogs = () => {
   return axios.get(apiEndPoint + "getAllBlog");

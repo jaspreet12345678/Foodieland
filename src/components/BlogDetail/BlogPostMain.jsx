@@ -1,5 +1,5 @@
 import React from 'react'
-import BlogPosts from './BlogDetailComponents/Professional';
+import BlogPosts from './BlogDetailComponents/BlogDetail';
 import Header from "../UsableComponents/Header";
 import Static from "../UsableComponents/Static";
 import Recipe from "./BlogDetailComponents/Recipe";

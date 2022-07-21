@@ -66,7 +66,7 @@ const BlogPostList = ({ posts, popularBlogs }) => {
               {popularBlogs.slice(0, 3).map((data) => {
                 return (
                   <HStack mt={5}>
-                    <Link to={`BlogPost/${data._id}`}>
+                    <Link to={`blogdetail/${data._id}`}>
                       <Img
                         w={180}
                         h={120}

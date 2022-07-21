@@ -1,7 +1,8 @@
 import axios from "axios";
+import { blogs } from "../config";
 
 // const apiEndPoint = config;
-const apiEndPoint = "https://foodielandnod.herokuapp.com/api/";
+const apiEndPoint = blogs;
 
 export const getAllCategory = () => {
  return axios.get(apiEndPoint + 'getAllCategory');

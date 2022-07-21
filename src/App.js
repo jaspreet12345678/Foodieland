@@ -1,12 +1,12 @@
 import "./App.css";
 import Index from "./components/Home/Index";
 import AboutUs from "./components/About/Index";
-import ReceipeMain from "./components/RecipesDetail/Index";
-import ContactMain from "./components/Contact/Index";
-import BlogPostMain from "./components/BlogPost/Index";
+import ReceipeMain from "./components/RecipesDetail/ReceipeMain";
+import ContactMain from "./components/Contact/ContactMain";
+import BlogPostMain from "./components/BlogDetail/BlogPostMain";
 import { Redirect, Route, Switch } from 'react-router-dom';
-import BlogLists from "./components/Blogs/Index";
-import RecipeList from "./components/Recipes/Index";
+import BlogLists from "./components/Blogs/BlogLists";
+import RecipeList from "./components/Recipes/RecipeList";
 
 function App() {
   return (

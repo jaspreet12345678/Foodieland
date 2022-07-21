@@ -82,7 +82,7 @@ const ReceipePostList = ({ posts, popularReceipe, searchQuery }) => {
                 return (
                   <HStack mt={5}>
                     <Box w={180}>
-                      <Link to={`/RecipePost/${data._id}`}>
+                      <Link to={`/recipedetail/${data._id}`}>
                         <Img
                           w={180}
                           h={120}
