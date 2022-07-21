@@ -38,7 +38,7 @@ const ImageSlider = (props) => {
 
   return (
     <Carousel infiniteLoop>
-      {data.slice(1,6).map((item) => {
+      {data.slice(1, 6).map((item) => {
         return (
           <Box>
             <Flex
@@ -113,16 +113,16 @@ const ImageSlider = (props) => {
                   </Link>
                 </Wrap>
               </Box>
-              <Box w={512}>
               <Link to={`/recipedetail/${item._id}`}>
+                <Box w={512}>
                   <Img
                     src={imagePath + item.recipeId.image}
                     borderRadius={20}
                     h={500}
                     w="100%"
                   />
-                </Link>
-              </Box>
+                </Box>
+              </Link>
             </Flex>
           </Box>
         );
