@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { FiCircle } from "react-icons/fi";
-import { getOneReceipePost } from "../../utils/blogSer";
+import { getOneReceipePost } from "../../../utils/blogSer";
 import { useState, useEffect } from "react";
 
 function Direction(props) {
@@ -29,7 +29,7 @@ function Direction(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
     getReceipeDetail();
-  }, []);
+  }, [receipeId]);
 
   return (
     <Box maxW={1024} mx={"auto"}>

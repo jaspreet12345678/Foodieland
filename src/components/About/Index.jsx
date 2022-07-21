@@ -1,10 +1,10 @@
 import React from "react";
-import Footer from "../usable/Footer";
-import Header from "../usable/Header";
-import Recipe from "../Home/Recipe";
-import Static from "../usable/Static";
-import About from "./About";
-import Chef from "./Chef";
+import Footer from "../UsableComponents/Footer";
+import Header from "../UsableComponents/Header";
+import Recipe from "../Home/HomeComponents/Recipe";
+import Static from "../UsableComponents/Static";
+import About from "./AboutComponents/About";
+import Chef from "./AboutComponents/Chef";
 
 const AboutUs = () => {
   return <>

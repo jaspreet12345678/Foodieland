@@ -10,7 +10,6 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-import { Avatar } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import "./index.css"
 
@@ -26,12 +25,11 @@ const Header = () => {
           </Flex>
           <Flex justifyContent={"space-between"}>
             <HStack spacing={8}>
-              <NavLink className="common" to="/Home">Home</NavLink>
-              <NavLink className="common" to="/Recipes">Receipe</NavLink>
-              <NavLink className="common" to="/BlogList">BlogList</NavLink>
-              {/* <NavLink className="common" to="/BlogPost">BlogPost</NavLink> */}
-              <NavLink className="common" to="/Contact">Contact</NavLink>
-              <NavLink className="common" to="/About">About Us</NavLink>
+              <NavLink className="common" to="/home">Home</NavLink>
+              <NavLink className="common" to="/recipes">Receipe</NavLink>
+              <NavLink className="common" to="/blogs">BlogList</NavLink>
+              <NavLink className="common" to="/contact">Contact</NavLink>
+              <NavLink className="common" to="/about">About Us</NavLink>
             </HStack>
           </Flex>
           <Spacer />

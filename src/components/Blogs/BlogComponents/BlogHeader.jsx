@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import BlogPostList from "./BlogPost";
-import Pagination from "./Pagination";
+import Pagination from "../../UsableComponents/Pagination";
 import {
   getAllBlogs,
   getAllPopularBlogs,
   getSearchQuery,
-} from "../../utils/blogSer";
+} from "../../../utils/blogSer";
 import {
   Center,
   Container,
@@ -47,6 +47,7 @@ function BlogHeader() {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
   const paginate = (pageNumber) => {
+    window.scroll(0,0)
     setCurrentPage(pageNumber);
   };
 

@@ -6,7 +6,6 @@ import {
   List,
   ListItem,
   ListIcon,
-  VStack,
   Divider,
   HStack,
   Img,
@@ -15,11 +14,10 @@ import {
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { FiCircle } from "react-icons/fi";
-import axios from "axios";
 import { useState, useEffect } from "react";
-import { getOneReceipePost } from "../../utils/blogSer";
+import { getOneReceipePost } from "../../../utils/blogSer";
 import { Link } from "react-router-dom";
-import { getPopularReceipes } from "../../utils/services";
+import { getPopularReceipes } from "../../../utils/services";
 
 function Ingrediants(props) {
   const [popularReceipe, setPopularReceipe] = useState([]);
@@ -144,7 +142,7 @@ function Ingrediants(props) {
               return (
                 <HStack>
                   <Box w={150}>
-                    <Link to={`/RecipePost/${data._id}`} onClick={handleevent}>
+                    <Link to={`/recipedetail/${data._id}`} onClick={handleevent}>
                       <Img
                         w={180}
                         h={120}

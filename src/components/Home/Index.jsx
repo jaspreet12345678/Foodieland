@@ -1,15 +1,15 @@
 import React from "react";
-import Cooker from "./Cooker";
-import Footer from "../usable/Footer";
-import Header from "../usable/Header";
-import Static from "../usable/Static";
+import Cooker from "./HomeComponents/Cooker";
+import Footer from "../UsableComponents/Footer";
+import Header from "../UsableComponents/Header";
+import Static from "../UsableComponents/Static";
 import { Box } from "@chakra-ui/react";
-import Categories from "./Category";
-import ImageSlider from "./ImageSlider";
-import Instagram from "./Instagram";
-import Recipe from "./Recipe";
-import AllReceipes from "./AllRecipes";
-const Index = () => {
+import Categories from "./HomeComponents/Category";
+import ImageSlider from "./HomeComponents/ImageSlider";
+import Instagram from "./HomeComponents/Instagram";
+import Recipe from "./HomeComponents/Recipe";
+import AllReceipes from "./HomeComponents/AllRecipes";
+const Index = (props) => {
   return (
     <>
       <Header />

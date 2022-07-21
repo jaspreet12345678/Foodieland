@@ -11,7 +11,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { FaInstagram } from "react-icons/fa";
-import { Link } from "react-router-dom";
 const Instagram = () => {
 
   return (

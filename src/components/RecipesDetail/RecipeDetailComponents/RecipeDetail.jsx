@@ -12,16 +12,15 @@ import {
   VStack,
   Button,
 } from "@chakra-ui/react";
-import axios from "axios";
 import { useState, useEffect } from "react";
 import React from "react";
 import { FiPrinter, FiShare2 } from "react-icons/fi";
 import { RiTimerFill } from "react-icons/ri";
 import { TbToolsKitchen2 } from "react-icons/tb";
-import { getOneReceipePost } from "../../utils/blogSer";
+import { getOneReceipePost } from "../../../utils/blogSer";
 import moment from "moment";
 
-function RecipeS(props) {
+function RecipeDetail(props) {
   const [recipes, setRecipes] = useState([]);
   const imgPath = "https://foodielandnod.herokuapp.com/";
   const receipeId = props.receipeId;
@@ -211,4 +210,4 @@ function RecipeS(props) {
   );
 }
 
-export default RecipeS;
+export default RecipeDetail;

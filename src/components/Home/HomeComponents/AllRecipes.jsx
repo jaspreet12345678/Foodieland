@@ -1,19 +1,17 @@
 import React, { Component } from "react";
-import axios from "axios";
 import {
   Box,
   Heading,
   Flex,
   SimpleGrid,
   Text,
-  Button,
-  Image,
   HStack,
-  Img
+  Img,
+  Icon,
 } from "@chakra-ui/react";
 import { BsFillAlarmFill } from "react-icons/bs";
 import { ImSpoonKnife } from "react-icons/im";
-import { getAllReceipe } from "../../utils/services";
+import { getAllReceipe } from "../../../utils/services";
 import { Link } from "react-router-dom";
 
 class AllReceipes extends Component {
@@ -27,7 +25,6 @@ class AllReceipes extends Component {
   }
 
   async componentDidMount() {
-    const URL = "https://foodielandnod.herokuapp.com/api/v1/getAllRecipes";
     const res = await getAllReceipe();
     const popularReceipes = res.data;
     this.setState({ popularReceipes });
@@ -49,7 +46,7 @@ class AllReceipes extends Component {
           {this.state.popularReceipes.slice(0, 6).map((item) => {
             return (
               <Box p={3} bg="#EBF8FF" borderRadius={20} as="article" mt={15}>
-                <Link to={`/RecipePost/${item._id}`}>
+                <Link to={`/recipedetail/${item._id}`}>
                   <Img
                     src={this.imagePath + item.recipeId.image}
                     borderRadius={20}
@@ -57,18 +54,22 @@ class AllReceipes extends Component {
                     w="100%"
                   />
                 </Link>
-                <Heading size="md" fontWeight="bold">
+                <Heading size="sm" fontWeight="bold">
                   {item.recipeId.title}
                 </Heading>
-                <HStack justifyItems={"space-between"}>
-                  <Button borderRadius="10px" bgColor="#EDFDFD">
-                    <BsFillAlarmFill />
-                    {item.recipeId.cookTime}
-                  </Button>
-                  <Button borderRadius="10px" bgColor="#EDFDFD">
-                    <ImSpoonKnife />
-                    {item.recipeId.categoryId.categoryName}
-                  </Button>
+                <HStack mt={2} justifyItems={"space-between"}>
+                  <HStack>
+                    <Icon ml={5} as={BsFillAlarmFill} />
+                    <Text borderRadius="10px" bgColor="#EDFDFD">
+                      {item.recipeId.cookTime}
+                    </Text>
+                  </HStack>
+                  <HStack >
+                    <Icon ml={25} as={ImSpoonKnife} />
+                    <Text borderRadius="10px" bgColor="#EDFDFD">
+                      {item.recipeId.categoryId.categoryName}
+                    </Text>
+                  </HStack>
                 </HStack>
               </Box>
             );

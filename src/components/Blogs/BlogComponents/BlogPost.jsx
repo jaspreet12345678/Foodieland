@@ -23,7 +23,7 @@ const BlogPostList = ({ posts, popularBlogs }) => {
             return (
               <Flex mb={5}>
                 <Box w={250}>
-                  <Link to={`/BlogPost/${item._id}`}>
+                  <Link to={`/blogdetail/${item._id}`}>
                     <Img
                       src={imgPath + item.image}
                       w={220}

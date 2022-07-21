@@ -1,19 +1,18 @@
+import React from "react";
 import Footer from "../UsableComponents/Footer";
 import Header from "../UsableComponents/Header";
-import Recipe from "./ContactComponents/Recipe";
 import Static from "../UsableComponents/Static";
-import Contact from "./ContactComponents/Contact";
+import ReceipeHeader from "./RecipesComponents/RecipeHeader";
 
-const ContactMain = () => {
+function RecipeList(props) {
   return (
     <>
       <Header />
-      <Contact />
+      <ReceipeHeader />
       <Static />
-      <Recipe />
       <Footer />
     </>
   );
-};
+}
 
-export default ContactMain;
+export default RecipeList;

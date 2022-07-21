@@ -13,7 +13,7 @@ import {
   Img,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import { getOneBlogPost } from "../../utils/blogSer";
+import { getOneBlogPost } from "../../../utils/blogSer";
 import moment from "moment";
 
 function BlogPosts(props) {

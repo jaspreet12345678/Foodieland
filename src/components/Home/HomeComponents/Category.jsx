@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import {
   Heading,
   GridItem,
@@ -10,7 +9,7 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import { getAllCategory } from "../../utils/services";
+import { getAllCategory } from "../../../utils/services";
 import { Link } from "react-router-dom";
 
 function Category() {

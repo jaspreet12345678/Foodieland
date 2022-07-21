@@ -1,19 +1,18 @@
+import React from "react";
 import Footer from "../UsableComponents/Footer";
 import Header from "../UsableComponents/Header";
-import Recipe from "./ContactComponents/Recipe";
 import Static from "../UsableComponents/Static";
-import Contact from "./ContactComponents/Contact";
+import BlogHeader from "./BlogComponents/BlogHeader";
 
-const ContactMain = () => {
+function BlogLists(props) {
   return (
     <>
       <Header />
-      <Contact />
+      <BlogHeader />
       <Static />
-      <Recipe />
       <Footer />
     </>
   );
-};
+}
 
-export default ContactMain;
+export default BlogLists;

@@ -4,24 +4,19 @@ import {
   Heading,
   Select,
   Image,
-  SimpleGrid,
   Textarea,
   Text,
   Input,
-  VStack,
   HStack,
   Button,
   FormControl,
   FormLabel,
-  FormErrorMessage,
   Stack,
   Container,
   Center,
 } from "@chakra-ui/react";
-import { useState } from "react";
 import { Formik, Field } from "formik";
 import React from "react";
-import { setContact } from "../../utils/contact";
 import { useEffect } from "react";
 const Contact = () => {
   // const [contact, setContact] = useState({

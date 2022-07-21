@@ -8,7 +8,6 @@ import {
   Divider,
   Button,
   Stack,
-  Center,
 } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
@@ -28,22 +27,19 @@ function Footer(props) {
           <Spacer />
           <Flex justifyContent={"space-between"}>
             <HStack spacing={8}>
-              <NavLink className={"common"} to="/Home">
+              <NavLink className={"common"} to="/home">
                 Home
               </NavLink>
-              <NavLink className={"common"} to="/Recipes">
+              <NavLink className={"common"} to="/recipes">
                 Receipe
               </NavLink>
-              <NavLink className={"common"} to="/BlogList">
+              <NavLink className={"common"} to="/blogs">
                 BlogList
               </NavLink>
-              {/* <NavLink className={"common"} to="/BlogPost">
-                BlogPost
-              </NavLink> */}
-              <NavLink className={"common"} to="/Contact">
+              <NavLink className={"common"} to="/contact">
                 Contact
               </NavLink>
-              <NavLink className={"common"} to="/About">
+              <NavLink className={"common"} to="/about">
                 About Us
               </NavLink>
             </HStack>

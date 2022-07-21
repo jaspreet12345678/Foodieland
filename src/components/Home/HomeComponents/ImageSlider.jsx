@@ -15,15 +15,14 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { BsFillAlarmFill } from "react-icons/bs";
 import { ImSpoonKnife } from "react-icons/im";
 import { MdOutlineSlowMotionVideo, MdKitchen } from "react-icons/md";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import moment from "moment";
-import {getPopularReceipes} from "../../utils/services"
+import {getPopularReceipes} from "../../../utils/services";
+import { Link } from "react-router-dom";
 
-const ImageSlider = ({ slides }) => {
+const ImageSlider = ( props ) => {
   const [data, setData] = useState([]);
   const imagePath = "https://foodielandnod.herokuapp.com/";
-
 
   const getPopularReceipeData = async () => {
     const URL = "https://foodielandnod.herokuapp.com/api/popularRecipes";
@@ -34,6 +33,7 @@ const ImageSlider = ({ slides }) => {
 
   useEffect(() => {
     getPopularReceipeData();
+    // getReceipeDetail();
   }, []);
 
   return (
@@ -104,10 +104,12 @@ const ImageSlider = ({ slides }) => {
                       </Text>
                     </Box>
                   </WrapItem>
-                  <Button borderRadius="10px" bgColor="#000" colorScheme="#fff">
-                    View Receipe
-                    <MdOutlineSlowMotionVideo />
-                  </Button>
+                  <Link to={`/recipedetail/${item._id}`}>
+                    <Button borderRadius="10px" bgColor="#000" colorScheme="#fff">
+                      View Receipe
+                      <MdOutlineSlowMotionVideo />
+                    </Button>
+                  </Link>
                 </Wrap>
               </Box>
               <Box w={512}>
