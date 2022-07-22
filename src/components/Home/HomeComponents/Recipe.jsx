@@ -15,17 +15,15 @@ import { ImSpoonKnife } from "react-icons/im";
 import { getAllReceipe } from "../../../utils/services";
 import { Link } from "react-router-dom";
 import { api } from "../../../config";
+import "../../../App.css";
 class Recipe extends Component {
   state = {
     popularRecipe: [],
   };
   imagePath = api;
 
-  componentDidMount() {
-    window.scroll(0, 0);
-  }
-
   async componentDidMount() {
+    window.scroll(0, 0);
     const recipe = await getAllReceipe();
     const popularRecipe = recipe.data;
     this.setState({ popularRecipe: popularRecipe });
@@ -40,11 +38,18 @@ class Recipe extends Component {
             consectetur <br /> Lorem ipsum dolor sit amet consectetur{" "}
           </Text>
         </Stack>
-        <SimpleGrid columns={3} spacing={6}>
+        <SimpleGrid columns={3} spacing={10}>
           {this.state.popularRecipe.slice(0, 6).map((item) => {
             return (
               <Link to={`/recipedetail/${item._id}`}>
-                <Box p={3} bg="#EBF8FF" borderRadius={20} as="article" mt={15}>
+                <Box
+                  className="zoom"
+                  p={3}
+                  bg="#EBF8FF"
+                  borderRadius={20}
+                  as="article"
+                  mt={15}
+                >
                   <Img
                     src={this.imagePath + item.recipeId.image}
                     borderRadius={20}

@@ -14,17 +14,15 @@ import { ImSpoonKnife } from "react-icons/im";
 import { getAllReceipe } from "../../../utils/services";
 import { Link } from "react-router-dom";
 import { api } from "../../../config";
+import "../../../App.css";
 class AllReceipes extends Component {
   state = {
     popularReceipes: [],
   };
   imagePath = api;
-
-  componentDidMount() {
-    window.scroll(0, 0);
-  }
-
+  
   async componentDidMount() {
+    window.scroll(0, 0);
     const res = await getAllReceipe();
     const popularReceipes = res.data;
     this.setState({ popularReceipes });
@@ -42,18 +40,25 @@ class AllReceipes extends Component {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Text>
         </Flex>
-        <SimpleGrid columns={3} spacing={6}>
+        <SimpleGrid columns={3} spacing={10}>
           {this.state.popularReceipes.slice(0, 6).map((item) => {
             return (
               <Link to={`/recipedetail/${item._id}`}>
-                <Box p={3} bg="#EBF8FF" borderRadius={20} as="article" mt={15}>
+                <Box
+                  className="zoom"
+                  p={3}
+                  bg="#EBF8FF"
+                  borderRadius={20}
+                  as="article"
+                  mt={15}
+                >
                   <Img
                     src={this.imagePath + item.recipeId.image}
                     borderRadius={20}
                     h={200}
                     w="100%"
                   />
-                  <Heading size="sm" fontWeight="bold">
+                  <Heading mt={2} size="sm" fontWeight="bold">
                     {item.recipeId.title}
                   </Heading>
                   <HStack mt={2} justifyItems={"space-between"}>

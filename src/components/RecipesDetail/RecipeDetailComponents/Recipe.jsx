@@ -3,7 +3,7 @@ import {
   Box,
   Text,
   Stack,
-  Image,
+  Img,
   SimpleGrid,
   HStack,
   Icon,
@@ -21,7 +21,6 @@ class Recipe extends Component {
   imagePath = "https://foodielandnod.herokuapp.com/";
 
   async componentDidMount() {
-    const url = "https://foodielandnod.herokuapp.com/api/v1/getAllRecipes";
     const recipe = await getAllReceipe();
     const popularRecipe = recipe.data;
     this.setState({ popularRecipe: popularRecipe });
@@ -36,17 +35,25 @@ class Recipe extends Component {
             consectetur <br /> Lorem ipsum dolor sit amet consectetur{" "}
           </Text>
         </Stack>
-        <SimpleGrid columns={3} spacing={6}>
-          {this.state.popularRecipe.slice(0, 3).map((item) => {
+        <SimpleGrid columns={3} spacing={10}>
+          {this.state.popularRecipe.slice(0, 6).map((item) => {
             return (
               <Link to={`/recipedetail/${item._id}`}>
-                <Box p={3} bg="#EBF8FF" borderRadius={20} as="article" mt={15}>
-                  <Image
+                <Box
+                  className="zoom"
+                  p={3}
+                  bg="#EBF8FF"
+                  borderRadius={20}
+                  as="article"
+                  mt={15}
+                >
+                  <Img
+                    src={this.imagePath + item.recipeId.image}
+                    borderRadius={20}
                     h={200}
                     w="100%"
-                    src={this.imagePath + item.recipeId.image}
                   />
-                  <Heading size="sm" fontWeight="bold">
+                  <Heading mt={2} size="sm" fontWeight="bold">
                     {item.recipeId.title}
                   </Heading>
                   <HStack mt={2} justifyItems={"space-between"}>

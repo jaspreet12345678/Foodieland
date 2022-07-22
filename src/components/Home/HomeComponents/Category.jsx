@@ -17,7 +17,7 @@ function Category() {
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
-    window.scroll(0,0);
+    window.scroll(0, 0);
     const loadPost = async () => {
       const response = await getAllCategory();
       setCategory(response.data);
@@ -27,33 +27,42 @@ function Category() {
   }, []);
 
   const imagePath = api;
-  const handleevent = () =>{
-    window.scroll(0,0);
-  }
+  const handleevent = () => {
+    window.scroll(0, 0);
+  };
 
   return (
-    <Box marginTop="60px" maxW={1024} mx={"auto"}>
-      <HStack justifyContent={"space-between"}>
-        <Heading>Category</Heading>
-        <Button bgColor="#EBF8FF" borderRadius="10px">
-          View all Categories
-        </Button>
-      </HStack>
-      <Box h={"100%"} w={"100%"} mt={10}>
-        <Grid templateColumns="repeat(6, 1fr)" gap={6}>
-          {category.slice(2, 8).map((item) => (
-            <GridItem>
-              <Link to="#" onClick={handleevent}>
-                <Image w={250} h={150} src={imagePath + item.image} />
-              </Link>
-              <Text fontSize={"md"} fontWeight={400} textAlign={"center"}>
-                {item.categoryName}
-              </Text>
-            </GridItem>
-          ))}
-        </Grid>
+    <>
+      <Box marginTop="60px" maxW={1024} mx={"auto"}>
+        <HStack justifyContent={"space-between"}>
+          <Heading>Category</Heading>
+          <Button
+
+          intercom
+        
+            mt="1rem"
+            bgColor="#EBF8FF"
+            borderRadius="10px"
+          >
+            View all Categories
+          </Button>
+        </HStack>
+        <Box h={"100%"} w={"100%"} mt={10}>
+          <Grid templateColumns="repeat(5, 1fr)" gap={6}>
+            {category.slice(0, 5).map((item) => (
+              <GridItem>
+                <Link to="#" onClick={handleevent}>
+                  <Image w={250} h={150} src={imagePath + item.image} />
+                </Link>
+                <Text fontSize={"md"} fontWeight={400} textAlign={"center"}>
+                  {item.categoryName}
+                </Text>
+              </GridItem>
+            ))}
+          </Grid>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 }
 

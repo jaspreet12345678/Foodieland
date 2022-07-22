@@ -9,6 +9,7 @@ import {
   WrapItem,
   Avatar,
   Img,
+  Icon,
 } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -67,16 +68,20 @@ const ImageSlider = (props) => {
                 >
                   {item.recipeId.description}
                 </Text>
-                <HStack ml={10} justifyItems={"space-between"}>
-                  <Button borderRadius="10px" bgColor="#EDFDFD">
-                    <BsFillAlarmFill />
-                    {item.recipeId.prepTime}
-                  </Button>
-                  <Button borderRadius="10px" bgColor="#EDFDFD">
-                    <ImSpoonKnife />
-                    {item.recipeId.categoryId.categoryName}
-                  </Button>
-                </HStack>
+                <HStack mt={2} ml={20} justifyItems={"space-between"}>
+                    <HStack>
+                      <Icon ml={5} as={BsFillAlarmFill} />
+                      <Text borderRadius="10px" bgColor="#EDFDFD">
+                        {item.recipeId.cookTime}
+                      </Text>
+                    </HStack>
+                    <HStack>
+                      <Icon ml={25} as={ImSpoonKnife} />
+                      <Text borderRadius="10px" bgColor="#EDFDFD">
+                        {item.recipeId.categoryId.categoryName}
+                      </Text>
+                    </HStack>
+                  </HStack>
                 <Wrap
                   spacing="160px"
                   mt={20}

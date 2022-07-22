@@ -41,7 +41,31 @@ const Contact = () => {
       </Stack>
       <Stack align={"center"} direction={{ base: "column", md: "row" }}>
         <Stack flex={1}>
-          <Flex bg="gray.100">
+          <Flex>
+            <Flex
+              flex={1}
+              justify={"center"}
+              align={"center"}
+              position={"relative"}
+              w={300}
+            >
+              <Box
+                position={"relative"}
+                rounded={"0xl"}
+                boxShadow={"1xl"}
+                width={"full"}
+                overflow={"hidden"}
+                bgGradient="linear(to-b, white.0, blue.100)"
+          
+              >
+                <Image
+                ml={100}
+                  fit={"cover"}
+                  align={"center"}
+                  src={"Cook-contact.png"}
+                />
+              </Box>
+            </Flex>
             <Box bg="white" p={6}>
               <Formik
                 initialValues={{
@@ -226,33 +250,6 @@ const Contact = () => {
             </Box>
           </Flex>
         </Stack>
-
-        <Flex
-          flex={1}
-          justify={"center"}
-          align={"center"}
-          position={"relative"}
-          w={300}
-        >
-          <Box
-            position={"relative"}
-            rounded={"0xl"}
-            boxShadow={"1xl"}
-            width={"full"}
-            overflow={"hidden"}
-            bgGradient="linear(to-b, white.0, blue.100)"
-          >
-            <Image
-              justifyContent={"center"}
-              alt={"Hero Image"}
-              fit={"cover"}
-              align={"center"}
-              // w={"100%"}
-              // h={"100%"}
-              src={"Cook-contact.png"}
-            />
-          </Box>
-        </Flex>
       </Stack>
     </Container>
   );
