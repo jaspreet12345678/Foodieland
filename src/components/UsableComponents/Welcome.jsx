@@ -10,10 +10,10 @@ function Welcome(props) {
     setTimeout(() =>{
         props.history.push("/home")
         localStorage.removeItem("token");
-    }, 15000);
+    }, 60000);
 
     return (
-        <Heading>Welcome you will be logout after 15 mins</Heading>
+        <Heading>Welcome you will be logout after 1 mins</Heading>
       );
 }
 
