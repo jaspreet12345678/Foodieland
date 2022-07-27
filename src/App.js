@@ -7,6 +7,8 @@ import BlogPostMain from "./components/BlogDetail/BlogPostMain";
 import { Redirect, Route, Switch } from 'react-router-dom';
 import BlogLists from "./components/Blogs/BlogLists";
 import RecipeList from "./components/Recipes/RecipeList";
+import BannerContact from "./components/UsableComponents/Login"
+import Welcome from "./components/UsableComponents/Welcome";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
       <Route path="/blogdetail/:blogId" component={BlogPostMain} />
       <Route path="/contact" component={ContactMain} />
       <Route path="/about" component={AboutUs} />
+      <Route path="/login" component={BannerContact} />
+      <Route path="/welcome" component={Welcome} />
       <Redirect from='/' exact to='/home/index'/>
       <Redirect exact to='/not-found' /> 
     </Switch> 

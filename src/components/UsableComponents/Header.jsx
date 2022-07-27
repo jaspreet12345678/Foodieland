@@ -40,6 +40,9 @@ const Header = () => {
               <NavLink className="common" to="/about">
                 About Us
               </NavLink>
+              <NavLink className="common" to="/login">
+                Login
+              </NavLink>
             </HStack>
           </Flex>
           <Spacer />
