@@ -59,7 +59,8 @@ class Login extends Component {
       const value = response.data.accessToken;
       // alert("ok");
       const jwt = localStorage.setItem("token", value);
-      this.props.history.push("/");
+      console.log(this.props)
+      window.location = "/";
     }
   };
 
