@@ -10,6 +10,7 @@ import Instagram from "./HomeComponents/Instagram";
 import Recipe from "./HomeComponents/Recipe";
 import AllReceipes from "./HomeComponents/AllRecipes";
 const Index = (props) => {
+
   return (
     <>
       <Header />

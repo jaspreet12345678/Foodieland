@@ -13,7 +13,12 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import "./index.css";
 
-const Header = () => {
+const Header = (props) => {
+  const token = localStorage.getItem("token");
+//   setTimeout(() =>{
+//     props.history.push("/login");
+//     localStorage.removeItem("token");
+// }, 15000);
   return (
     <>
       <Box maxW={1024} mx={"auto"}>
@@ -40,9 +45,12 @@ const Header = () => {
               <NavLink className="common" to="/about">
                 About Us
               </NavLink>
-              <NavLink className="common" to="/login">
+              {!token && <NavLink className="common" to="/login">
                 Login
-              </NavLink>
+              </NavLink>}
+              {token && <NavLink className="common" to="/login">
+                Logout
+              </NavLink>}
             </HStack>
           </Flex>
           <Spacer />

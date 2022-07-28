@@ -16,7 +16,7 @@ import {
 import { setLogin } from "../../utils/login";
 import Welcome from "./Welcome";
 
-class BannerContact extends Component {
+class Login extends Component {
   state = {
     userData: {
       password: "",
@@ -54,12 +54,12 @@ class BannerContact extends Component {
         email: "",
       },
     });
-    if(response && response.status){
+    if (response && response.status === 200) {
       console.log(response.data.accessToken);
       const value = response.data.accessToken;
       // alert("ok");
       const jwt = localStorage.setItem("token", value);
-      this.props.history.push("/welcome")
+      this.props.history.push("/");
     }
   };
 
@@ -164,4 +164,4 @@ class BannerContact extends Component {
   }
 }
 
-export default BannerContact;
+export default Login;

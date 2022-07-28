@@ -8,9 +8,9 @@ function Welcome(props) {
     // console.log(token)
 
     setTimeout(() =>{
-        props.history.push("/home")
+        props.history.push("/login")
         localStorage.removeItem("token");
-    }, 60000);
+    }, 5000);
 
     return (
         <Heading>Welcome you will be logout after 1 mins</Heading>
