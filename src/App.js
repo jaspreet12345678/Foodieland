@@ -10,11 +10,7 @@ import RecipeList from "./components/Recipes/RecipeList";
 import Login from "./components/UsableComponents/Login";
 import Welcome from "./components/UsableComponents/Welcome";
 function App(props) {
-  console.log(props);
-  setTimeout(() => {
-    localStorage.removeItem("token");
-    window.location = "/login";
-  }, 30000);
+  
   return (
     <>
       <Switch>

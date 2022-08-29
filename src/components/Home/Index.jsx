@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Cooker from "./HomeComponents/Cooker";
 import Footer from "../UsableComponents/Footer";
 import Header from "../UsableComponents/Header";
@@ -9,7 +9,20 @@ import ImageSlider from "./HomeComponents/ImageSlider";
 import Instagram from "./HomeComponents/Instagram";
 import Recipe from "./HomeComponents/Recipe";
 import AllReceipes from "./HomeComponents/AllRecipes";
+
 const Index = (props) => {
+  const token = localStorage.getItem("token");
+
+  console.log(token);
+  useEffect(() => {
+    if (token !== null) {
+      setTimeout(() => {
+        localStorage.removeItem("token");
+        props.history.push("/login"); 
+        // window.location = "/login";
+      }, 30000);
+    }
+  }, []);
 
   return (
     <>

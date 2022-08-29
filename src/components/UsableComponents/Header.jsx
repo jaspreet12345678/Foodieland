@@ -15,10 +15,7 @@ import "./index.css";
 
 const Header = (props) => {
   const token = localStorage.getItem("token");
-//   setTimeout(() =>{
-//     props.history.push("/login");
-//     localStorage.removeItem("token");
-// }, 15000);
+
   return (
     <>
       <Box maxW={1024} mx={"auto"}>

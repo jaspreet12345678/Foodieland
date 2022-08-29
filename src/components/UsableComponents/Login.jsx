@@ -55,12 +55,12 @@ class Login extends Component {
       },
     });
     if (response && response.status === 200) {
-      console.log(response.data.accessToken);
+      //console.log(response.data.accessToken);
       const value = response.data.accessToken;
       // alert("ok");
       const jwt = localStorage.setItem("token", value);
-      console.log(this.props)
-      window.location = "/";
+      // console.log(this.props)
+      this.props.history.push("/"); 
     }
   };
 
@@ -109,20 +109,6 @@ class Login extends Component {
             <FormControl>
               <form onSubmit={this.handleSubmit}>
                 <Stack direction={"row"}>
-                  <Box mr={5}>
-                    <Input
-                      name="password"
-                      value={userData.password}
-                      label="Password"
-                      placeholder="Enter Your Password"
-                      onChange={this.handleChange}
-                      error={errors.password}
-                    />
-
-                    <FormHelperText color={"#E53E3E"}>
-                      {errors.password}
-                    </FormHelperText>
-                  </Box>
 
                   <Box>
                     <Input
@@ -135,6 +121,20 @@ class Login extends Component {
                     />
                     <FormHelperText color={"#E53E3E"}>
                       {errors.email}
+                    </FormHelperText>
+                  </Box>
+                  <Box mr={5}>
+                    <Input
+                      name="password"
+                      value={userData.password}
+                      label="Password"
+                      placeholder="Enter Your Password"
+                      onChange={this.handleChange}
+                      error={errors.password}
+                    />
+
+                    <FormHelperText color={"#E53E3E"}>
+                      {errors.password}
                     </FormHelperText>
                   </Box>
                 </Stack>
