@@ -45,7 +45,7 @@ const Header = (props) => {
               {!token && <NavLink className="common" to="/login">
                 Login
               </NavLink>}
-              {token && <NavLink className="common" to="/login">
+              {token && <NavLink className="common" to="/logout">
                 Logout
               </NavLink>}
             </HStack>

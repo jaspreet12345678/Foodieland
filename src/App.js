@@ -9,8 +9,8 @@ import BlogLists from "./components/Blogs/BlogLists";
 import RecipeList from "./components/Recipes/RecipeList";
 import Login from "./components/UsableComponents/Login";
 import Welcome from "./components/UsableComponents/Welcome";
+import Logout from "./components/UsableComponents/Logout";
 function App(props) {
-  
   return (
     <>
       <Switch>
@@ -22,8 +22,9 @@ function App(props) {
         <Route path="/contact" component={ContactMain} />
         <Route path="/about" component={AboutUs} />
         <Route path="/login" component={Login} />
+        <Route path="/logout" component={Logout} />
         <Route path="/welcome" component={Welcome} />
-        <Route path="/login" component={Login} />
+        {/* <Route path="/login" component={Login} /> */}
         <Redirect from="/" exact to="/home/index" />
         <Redirect exact to="/not-found" />
       </Switch>
